@@ -15,11 +15,11 @@
 		<meta name="keywords" content="Giáo dục" />
 		<meta name="description" content="Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels" />
 
-		<script type="text/javascript" src="http://sper.com/3rdparty/jquery/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="http://sper.com/3rdparty/bootstrap3/js/bootstrap.min.js"></script>
-		<link href='http://sper.com/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
-		<script type="text/javascript" src="http://sper.com/3rdparty/tinymce/tinymce.min.js"></script>
-		<link type="text/css" property="stylesheet" rel="stylesheet" href="http://sper.com/3rdparty/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<script type="text/javascript" src="/3rdparty/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/3rdparty/bootstrap3/js/bootstrap.min.js"></script>
+		<link href='/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="/3rdparty/tinymce/tinymce.min.js"></script>
+		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/font-awesome-4.6.3/css/font-awesome.min.css" />
 
 		<script type="text/javascript">
 			BASE_URL = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
