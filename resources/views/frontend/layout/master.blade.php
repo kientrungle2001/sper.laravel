@@ -28,13 +28,12 @@
 		@include('frontend.common.style')
 	</head>
 	<body>
-		 @include('frontend.common.top')
-		 @include('frontend.common.header')
-		
-        <div class="container-fluid">
-            @yield('content')
-        </div>
-        @include('frontend.common.footer')
-		@stack('scripts')
+			@include('frontend.common.top')
+			@include('frontend.common.header')
+			
+	        @yield('content')
+
+	        @include('frontend.common.footer')
+			@stack('scripts')
 	</body>
 </html>
