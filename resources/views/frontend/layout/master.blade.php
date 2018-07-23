@@ -29,6 +29,7 @@
 	</head>
 	<body>
 		 @include('frontend.common.top')
+		 @include('frontend.common.header')
 		
         <div class="container-fluid">
             @yield('content')
