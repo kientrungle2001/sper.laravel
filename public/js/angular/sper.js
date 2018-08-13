@@ -136,7 +136,6 @@
                 return sperApi.get(url, account, callback);
             },
             changeAvatar: function(account, callback) {
-                
             }
         },
         business: {
