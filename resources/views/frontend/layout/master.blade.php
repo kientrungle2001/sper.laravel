@@ -16,6 +16,9 @@
 		<meta name="description" content="Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels" />
 
 		<script type="text/javascript" src="/3rdparty/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+			$.noConflict();
+		</script>
 		<script type="text/javascript" src="/3rdparty/bootstrap3/js/bootstrap.min.js"></script>
 		<link href='/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="/3rdparty/tinymce/tinymce.min.js"></script>
@@ -25,9 +28,13 @@
 			BASE_URL = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
 			BASE_REQUEST = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
 		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" integrity="sha256-ruP2+uorUblSeg7Tozk75u8TaSUKRCZVvNV0zRGxkRQ=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-sanitize.min.js" integrity="sha256-FnMl43xSx3jHmcs7t2LJ3htfsCeo99XORPvzOVQN/tw=" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="/js/angular/sper.js"></script>
 		@include('frontend.common.style')
 	</head>
-	<body>
+	<body ng-app="SperApp">
 			@include('frontend.common.top')
 			@include('frontend.common.header')
 			

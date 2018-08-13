@@ -13,6 +13,4 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/test', function(){
-    echo 1;
-});
+Route::get('/service', 'ServiceController@index');
