@@ -55,6 +55,93 @@
             }
         }
     };
+    var idPartner = 2;
+    var namePartner = 'web';
+    var keyPartner = '3be3b14f25aef540d6617aac86685bb1';
+    var token = sperApi.getToken();
+    var sperApi = {
+        getToken: function() {
+            return 'aaaa';
+        },
+        get: function(url, data, callback) {
+            return jQuery.ajax({
+                url: '/sper_api.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    url: url,
+                    data: data,
+                    method: 'get'
+                },
+                success: function (resp) {
+                    if(callback)
+                        callback(resp);
+                }
+            });
+        },
+        post: function(url, data, callback) {
+            return jQuery.ajax({
+                url: '/sper_api.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    url: url,
+                    data: data,
+                    method: 'post'
+                },
+                success: function (resp) {
+                    if(callback)
+                        callback(resp);
+                }
+            });
+        },
+        account: {
+            register: function(account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/RegisterAccount';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.username + idPartner + namePartner + keyPartner);
+                return sperApi.post(url, account, callback);
+            },
+            update: function (account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/UpdateAccount';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
+                return sperApi.post(url, account, callback);
+            },
+            get: function(account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/GetAccount';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.username + idPartner + namePartner + keyPartner);
+                account.token = token;
+                account.password = MD5(account.password);
+                return sperApi.get(url, account, callback);
+            },
+            authen: function(account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/AuthenAccount';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
+                account.codeAuthen = MD5(MD5(account.codeAuthen));
+                return sperApi.get(url, account, callback);
+            },
+            changePass: function(account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/ChangePass';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
+                account.token = token;
+                return sperApi.get(url, account, callback);
+            }
+        },
+        business: {
+
+        },
+
+    };
+    
     var sperApp = angular.module('SperApp', ['ngSanitize'], function($interpolateProvider) {
         $interpolateProvider.startSymbol('<%');
         $interpolateProvider.endSymbol('%>');
