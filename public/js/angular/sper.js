@@ -58,7 +58,7 @@
     var idPartner = 2;
     var namePartner = 'web';
     var keyPartner = '3be3b14f25aef540d6617aac86685bb1';
-    var token = sperApi.getToken();
+    
     var sperApi = {
         getToken: function() {
             return 'aaaa';
@@ -134,6 +134,9 @@
                 account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
                 account.token = token;
                 return sperApi.get(url, account, callback);
+            },
+            changeAvatar: function(account, callback) {
+                
             }
         },
         business: {
@@ -141,6 +144,8 @@
         },
 
     };
+
+    var token = sperApi.getToken();
     
     var sperApp = angular.module('SperApp', ['ngSanitize'], function($interpolateProvider) {
         $interpolateProvider.startSymbol('<%');
@@ -183,4 +188,5 @@
             $scope.selectedCategory = category;
         };
     }]);
+
 })();
