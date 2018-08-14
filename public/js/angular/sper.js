@@ -131,15 +131,57 @@
                 var url = 'http://test.sper.com.vn/api/account/ChangePass';
                 account.idPartner = idPartner;
                 account.namePartner = namePartner;
-                account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
+                account.key = MD5(account.username + idPartner + namePartner + keyPartner);
                 account.token = token;
                 return sperApi.get(url, account, callback);
             },
             changeAvatar: function(account, callback) {
+                var url = 'http://test.sper.com.vn/api/account/ChangeAvatar';
+                account.idPartner = idPartner;
+                account.namePartner = namePartner;
+                account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
+                account.token = token;
+                return sperApi.post(url, account, callback);
             }
         },
         business: {
-
+            service: {
+                add: function(service) {
+                    var url = 'http://test.sper.com.vn/api/business/AddService';
+                    service.idPartner = idPartner;
+                    service.namePartner = namePartner;
+                    service.key = MD5(service.accid + idPartner + namePartner + keyPartner);
+                    service.token = token;
+                    return sperApi.post(url, service, callback);
+                },
+                get: function(service) {
+                    var url = 'http://test.sper.com.vn/api/business/GetService';
+                    service.idPartner = idPartner;
+                    service.namePartner = namePartner;
+                    service.key = MD5(service.serviceid + idPartner + namePartner + keyPartner);
+                    service.token = token;
+                    return sperApi.get(url, service, callback);
+                },
+                update: function(service) {
+                    var url = 'http://test.sper.com.vn/api/business/UpdateService';
+                    service.idPartner = idPartner;
+                    service.namePartner = namePartner;
+                    service.key = MD5(service.serviceid + idPartner + namePartner + keyPartner);
+                    service.token = token;
+                    return sperApi.post(url, service, callback);
+                },
+                searchByCate: function(service) {
+                    var url = 'http://test.sper.com.vn/api/business/SearchServiceByCate';
+                    service.idPartner = idPartner;
+                    service.namePartner = namePartner;
+                    service.key = MD5(idPartner + namePartner + keyPartner);
+                    service.token = token;
+                    return sperApi.get(url, service, callback);
+                },
+                searchByContent: function(service) {
+                    
+                }
+            }
         },
 
     };
