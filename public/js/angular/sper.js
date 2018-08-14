@@ -179,7 +179,12 @@
                     return sperApi.get(url, service, callback);
                 },
                 searchByContent: function(service) {
-                    
+                    var url = 'http://test.sper.com.vn/api/business/SearchServiceByContent';
+                    service.idPartner = idPartner;
+                    service.namePartner = namePartner;
+                    service.key = MD5(idPartner + namePartner + keyPartner);
+                    service.token = token;
+                    return sperApi.get(url, service, callback);
                 }
             }
         },
