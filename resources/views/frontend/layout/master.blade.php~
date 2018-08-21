@@ -32,11 +32,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-sanitize.min.js" integrity="sha256-FnMl43xSx3jHmcs7t2LJ3htfsCeo99XORPvzOVQN/tw=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/crypt.js"></script>
 		<script type="text/javascript" src="/js/angular/sper.js"></script>
-		@include('frontend.sper.style')
+		@include('frontend.common.style')
 	</head>
 	<body ng-app="SperApp">
-			@include('frontend.sper.account.login')
-			@include('frontend.sper.account.register')
 			@include('frontend.sper.banner.top')
 			@include('frontend.sper.header.menu')
 			

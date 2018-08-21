@@ -61,13 +61,30 @@
     
     var sperApi = {
         getToken: function() {
-            return 'aaaa';
+            var token = sperStorage.getItem('token');
+            if(null !== token) return token;
+
+            var url = 'http://test.sper.com.vn/api/authen/GetAccessToken';
+            var APPID = "da3e1502cc678218532b61f0a4d0a31c";
+            var KEY_SERCURITY = "e5f92ab61f0a4d0a31c4004afb85c998";
+            var data = {
+                idPartner: idPartner,
+                namePartner: namePartner,
+                key: MD5(APPID + idPartner + namePartner + KEY_SERCURITY),
+                async: false
+            };
+            this.get(url, data, function(resp){
+                token = resp.ResponseData;
+                sperStorage.setItem('token', token);
+            });
+            return token;
         },
         get: function(url, data, callback) {
             return jQuery.ajax({
                 url: '/sper_api.php',
                 type: 'post',
                 dataType: 'json',
+                async: data.async ? data.async: true,
                 data: {
                     url: url,
                     data: data,

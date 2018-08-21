@@ -13,8 +13,8 @@
 								<ul  class="dropdown-menu" style="width: 120px !important;">
 									<li style="width: 120px !important;" ng-repeat="category in categories">
 										<a onclick="return false;" ng-click="setSelectedCategory(category)"><% category.categoryname %></a>  
-									</li>  
-								</ul>  
+									</li>
+								</ul>
 							</div>  
 						</div>  
 					</li>  
@@ -74,10 +74,10 @@
 					</a>  
 				</li>  
 					<li  class="dropdown">
-						<a  class="dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">   <span  class="glyphicon glyphicon-minus-sign" style="font-size: 18px;"></span>     <span  class="caret"></span>  </a>  
+						<a  class="dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">   Tieng Viet     <span  class="caret"></span>  </a>  
 						<ul  class="dropdown-menu">
-							<li >   <a  href="#">Item 3</a>  </li>  
-							<li >   <a  href="#">Item 4</a>  </li>  
+							<li >   <a  href="#">Tieng Viet</a>  </li>  
+							<li >   <a  href="#">English</a>  </li>  
 					</ul>  
 				</li>  
 			</ul>  
