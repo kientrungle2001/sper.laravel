@@ -112,6 +112,16 @@
                 }
             });
         },
+        location: {
+            getListCities : function(params, callback) {
+                var url = 'http://test.sper.com.vn/api/business/GetListCities';
+                params.token = token;
+                params.idPartner = idPartner;
+                params.namePartner = namePartner;
+                params.key = MD5(idPartner + namePartner + keyPartner);
+                sperApi.get(url, params, callback);
+            }
+        },
         account: {
             register: function(account, callback) {
                 var url = 'http://test.sper.com.vn/api/account/RegisterAccount';
@@ -215,6 +225,12 @@
         $interpolateProvider.endSymbol('%>');
     });
     sperApp.controller('Sper.Header', ['$scope', function($scope) {
+
+        sperApi.location.getListCities({}, function(resp){
+            $scope.cities = resp.ResponseData;
+            $scope.$apply();
+        });
+
         $scope.categories = [{
             categoryid: 1,
             categoryname: 'Cong ty'

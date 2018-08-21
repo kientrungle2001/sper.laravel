@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="Sper.Header">
     <nav type="default" class="navbar navbar-default bg-white mb-0">
         <div class="navbar-header">
             <button class="navbar-toggle collapsed btn-default" data-target="#top-menu" data-toggle="collapse" aria-expanded="false">
@@ -32,13 +32,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <select class="form-control">
-                    <option>
-                        TP HCM
-                    </option>
-                    <option>
-                        Ha Noi
-                    </option>
+                <select class="form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCity">
+                     
                 </select>
             </div>
             <div class="form-group">
