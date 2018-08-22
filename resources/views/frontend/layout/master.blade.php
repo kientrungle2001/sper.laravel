@@ -4,7 +4,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels</title>
+		<title>CÔNG TY TNHH TM VÀ DV SPER</title>
 		<link rel="manifest" href="http://test1sn.vn/manifest.json">
 		<meta property="og:type"  content="og:article" />
 		<meta property="og:image" content="http://test1sn.vn/default/skin/nobel/themes/story/media/logo.png"/> 
@@ -32,6 +32,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-sanitize.min.js" integrity="sha256-FnMl43xSx3jHmcs7t2LJ3htfsCeo99XORPvzOVQN/tw=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/crypt.js"></script>
 		<script type="text/javascript" src="/js/angular/sper.js"></script>
+		<script type="text/javascript" src="/js/array.js"></script>
 		@include('frontend.sper.style')
 	</head>
 	<body ng-app="SperApp">

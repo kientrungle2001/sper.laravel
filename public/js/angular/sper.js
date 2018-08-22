@@ -122,6 +122,16 @@
                 sperApi.get(url, params, callback);
             }
         },
+        category: {
+            getList: function(params, callback) {
+                var url = 'http://test.sper.com.vn/api/business/GetListCateByDate';
+                params.token = token;
+                params.idPartner = idPartner;
+                params.namePartner = namePartner;
+                params.key = MD5(idPartner + namePartner + keyPartner);
+                sperApi.get(url, params, callback);
+            }
+        },
         account: {
             register: function(account, callback) {
                 var url = 'http://test.sper.com.vn/api/account/RegisterAccount';
@@ -221,50 +231,132 @@
     var token = sperApi.getToken();
     
     var sperApp = angular.module('SperApp', ['ngSanitize'], function($interpolateProvider) {
-        $interpolateProvider.startSymbol('<%');
-        $interpolateProvider.endSymbol('%>');
+        $interpolateProvider.startSymbol('%%');
+        $interpolateProvider.endSymbol('%%');
     });
+    
+    var sperMedia = {
+        cities: false,
+        categories: false
+    };
+
     sperApp.controller('Sper.Header', ['$scope', function($scope) {
 
         sperApi.location.getListCities({}, function(resp){
             $scope.cities = resp.ResponseData;
+            sperMedia.cities = $scope.cities;
+            $scope.loadSelectedCity();
             $scope.$apply();
         });
 
-        $scope.categories = [{
-            categoryid: 1,
-            categoryname: 'Cong ty'
-        },
-        {
-            categoryid: 2,
-            categoryname: 'To doi'
-        }];
+        $scope.loadSelectedCity = function () {
+            var selectedCityId = sperStorage.getItem('selectedCityId');
+            if (!selectedCityId) {
+                selectedCityId = $scope.cities[0].addcityid;
+            }
+            $scope.selectedCityId = selectedCityId;
+            $scope.selectCity();
+        };
+
+        $scope.selectCity = function () {
+            var city = $scope.getCity($scope.selectedCityId);
+            $scope.setSelectedCity(city);
+        }
+
+        $scope.setSelectedCity = function (city) {
+            sperStorage.setItem('selectedCityId', city.addcityid);
+            $scope.selectedCity = city;
+            $scope.selectedCityId = city.addcityid;
+        };
+
+        $scope.getCity = function (addcityid) {
+            var selectedCity = null;
+            $scope.cities.forEach(function (city) {
+                if (city.addcityid == addcityid) {
+                    selectedCity = city;
+                }
+            });
+            return selectedCity;
+        };
+
+
+        sperApi.category.getList({}, function (resp) {
+            $scope.categories = buildCategoryTree(resp.ResponseData);
+            sperMedia.categories = $scope.categories;
+            $scope.loadSelectedCategory();
+            $scope.$apply();
+        });
         
-        $scope.getCategory = function(categoryid) {
+        $scope.loadSelectedCategory = function () {
+            var selectedCategoryId = sperStorage.getItem('selectedCategoryId');
+            if (!selectedCategoryId) {
+                selectedCategoryId = $scope.categories[0].categoryid;
+            }
+            $scope.selectedCategoryId = selectedCategoryId;
+            $scope.selectCategory();
+        };
+
+        $scope.selectCategory = function() {
+            var category = $scope.getCategory($scope.selectedCategoryId);
+            $scope.setSelectedCategory(category);
+        }
+
+        $scope.setSelectedCategory = function (category) {
+            sperStorage.setItem('selectedCategoryId', category.categoryid);
+            $scope.selectedCategory = category;
+            $scope.selectedCategoryId = category.categoryid;
+        };
+
+        $scope.getCategory = function (categoryid) {
             var selectedCategory = null;
-            $scope.categories.forEach(function(category) {
-                if(category.categoryid == categoryid) {
+            $scope.categories.forEach(function (category) {
+                if (category.categoryid == categoryid) {
                     selectedCategory = category;
                 }
             });
             return selectedCategory;
         };
+    }]);
+
+    sperApp.controller('Sper.Service.Highlight', ['$scope', function ($scope) {
         
-        $scope.loadSelectedCategory = function() {
-            var selectedCategoryId = sperStorage.getItem('selectedCategoryId');
-            console.log(selectedCategoryId);
-            if(!selectedCategoryId) {
-                selectedCategoryId = $scope.categories[0].categoryid;
-                sperStorage.setItem('selectedCategoryId', selectedCategoryId);
+        var categoryIntervalId = setInterval(function(){
+            if (sperMedia.categories) {
+                $scope.categories = sperMedia.categories;
+                $scope.selectCategory($scope.categories[0]);
+                $scope.$apply();
+                clearInterval(categoryIntervalId);
             }
-            var selectedCategory = $scope.getCategory(selectedCategoryId);
-            $scope.selectedCategory = selectedCategory;
-        };
-        $scope.loadSelectedCategory();
-        console.log($scope.selectedCategory);
-        $scope.setSelectedCategory = function(category) {
-            sperStorage.setItem('selectedCategoryId', category.categoryid);
+        }, 10);
+        
+        $scope.selectCategory = function(category) {
             $scope.selectedCategory = category;
+            $scope.selectedSubCategory = null;
+        };
+
+        $scope.orderBys = [{
+            label: 'Tất cả',
+            index: 'all'
+        },
+        {
+            label: 'Gần nhất',
+            index: 'nearest'
+        },
+        {
+            label: 'Mới nhất',
+            index: 'newest'
+        },
+        {
+            label: 'Khuyến mại',
+            index: 'promotion'
+        }];
+        $scope.selectOrderBy = function(orderBy){
+            $scope.selectedOrderBy = orderBy;
+        };
+        $scope.selectedOrderBy = $scope.orderBys[0];
+
+        $scope.selectSubCategory = function(subCategory) {
+            $scope.selectedSubCategory = subCategory;
         };
     }]);
 

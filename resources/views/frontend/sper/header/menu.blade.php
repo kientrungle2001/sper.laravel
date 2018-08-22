@@ -12,18 +12,13 @@
         </div>
         <form align="left" class="navbar-form navbar-left">
             <div class="form-group">
-                <select class="form-control">
-                    <option>
-                        Cong ty
-                    </option>
-                    <option>
-                        To doi
-                    </option>
+                <select class="form-control" ng-options="category.categoryid as category.categoryname for category in categories" ng-model="selectedCategoryId" ng-change="selectCategory()">
+                     
                 </select>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input class="form-control" style="width:350px" placeholder="Search" />
+                    <input class="form-control" style="width:300px" placeholder="Search" />
                     <span class="input-group-btn">
                         <button class="btn btn-default" style="height: 34px;">
                             <span class="glyphicon glyphicon-search"></span>
@@ -32,7 +27,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <select class="form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCity">
+                <select class="form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCityId" ng-change="selectCity()">
                      
                 </select>
             </div>

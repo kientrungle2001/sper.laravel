@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3" ng-controller="Sper.Service.Highlight">
     <div class="panel panel-default">
         <div class="panel-heading pd-0">
             <div class="row">
@@ -7,26 +7,16 @@
                         <li role="presentation">
                             <a href="#">
                                 <span class="glyphicon glyphicon-star"></span>
-                                 Dich vu noi bat nhat
+                                 Dịch vụ nổi bật nhất
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-9">
                     <ul type="tabs" class="text-uppercase nav nav-tabs bd-none">
-                        <li role="presentation">
-                            <a href="#">
-                                Cong ty
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#">
-                                To doi
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#">
-                                Ca nhan
+                        <li role="presentation" ng-repeat="category in categories" ng-class="{'active': (selectedCategory === category)}" ng-click="selectCategory(category)">
+                            <a href="#" onclick="return false;">
+                                %%category.categoryname%%
                             </a>
                         </li>
                     </ul>
@@ -39,24 +29,9 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3" mdo="3">
                             <ul type="tabs" class="nav nav-tabs bd-none">
-                                <li role="presentation">
-                                    <a href="#">
-                                        Tat ca
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#">
-                                        Gan nhat
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#">
-                                        Moi nhat
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#">
-                                        Khuyen mai
+                                <li role="presentation" ng-repeat="orderBy in orderBys" ng-class="{'active': selectedOrderBy === orderBy}">
+                                    <a href="#" onclick="return false;" ng-click="selectOrderBy(orderBy)">
+                                        %%orderBy.label%%
                                     </a>
                                 </li>
                             </ul>
@@ -66,18 +41,13 @@
                                 <ul type="tabs" class="pull-right nav nav-tabs bd-none">
                                     <li role="presentation" class="dropdown">
                                         <a class="data-toggle" href="#" data-toggle="dropdown">
-                                            Chu de 
+                                            %%selectedSubCategory.categoryname || 'Chủ đề'%% 
                                             <span class="caret"></span>
                                         </a>
                                         <ul align="right" class="dropdown-menu dropdown-menu-right">
-                                            <li>
-                                                <a href="#">
-                                                    Chu de 1
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Chu de 2
+                                            <li ng-repeat="subCategory in selectedCategory.children" ng-class="{'active': selectedSubCategory === subCategory}">
+                                                <a href="#" onclick="return false;" ng-click="selectSubCategory(subCategory)">
+                                                    %%subCategory.categoryname%%
                                                 </a>
                                             </li>
                                         </ul>
