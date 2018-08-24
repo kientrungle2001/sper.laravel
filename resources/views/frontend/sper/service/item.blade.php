@@ -1,36 +1,33 @@
-<div class="col-md-15">
+<div class="service-item col-md-15" ng-repeat="service in services">
     <div class="panel panel-default mb-2">
         <div class="panel-heading pd-0">
-            <img class="img-responsive" src="http://placehold.it/480x360" />
+            <div class="embed-responsive embed-responsive-4by3" style="overflow:hidden;">
+                <img class="img-responsive" ng-src="%%service.serviceimg%%" />
+            </div>
         </div>
         <div class="panel-body">
-            <a href="#">
+            <a class="service-heading text-service-highlight" href="#">
                 <h4>
-                    Tran thach cao
+                    %%service.servicename%%
                 </h4>
             </a>
-            <address>
-                So 3 ngo 295 Bach Mai ...
+            <address class="service-address mb-1">
+                %%service.address_identifier.addressname%%
             </address>
-            <div class="clearfix">
-                <div class="pull-left">
+            <div class="fs-13 clearfix">
+                <div class="text-service pull-left">
                     <span class="glyphicon glyphicon-map-marker"></span>
-                     2 chi nhanh
+                     2 chi nhánh
                 </div>
                 <div class="pull-right">
-                    To doi
+                    %%selectedCategory.categoryname%%
                 </div>
             </div>
         </div>
-        <div class="panel-footer">
+        <div class="bg-white-i panel-footer">
             <div class="clearfix">
                 <div class="pull-left">
-                    <span class="fa fa-heart-o fa-1x"></span>
-                     200 
-                    <span class="fa fa-comments-o fa-1x"></span>
-                     200 
-                    <span class="fa fa-share-alt fa-1x"></span>
-                     200 
+                     
                 </div>
                 <div class="pull-right">
                     <span class="fa fa-bookmark fa-1x"></span>

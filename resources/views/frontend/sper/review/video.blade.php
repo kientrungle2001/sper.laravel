@@ -15,17 +15,17 @@
                 <ul type="tabs" class="nav nav-tabs bd-none">
                     <li role="presentation">
                         <a href="#">
-                            Tat ca
+                            Tất cả
                         </a>
                     </li>
                     <li role="presentation">
                         <a href="#">
-                            Gan nhat
+                            Gần nhất
                         </a>
                     </li>
                     <li role="presentation">
                         <a href="#">
-                            Moi nhat
+                            Mới nhất
                         </a>
                     </li>
                 </ul>

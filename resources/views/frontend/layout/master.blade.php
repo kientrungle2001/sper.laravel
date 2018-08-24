@@ -15,7 +15,7 @@
 		<meta name="keywords" content="Giáo dục" />
 		<meta name="description" content="Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels" />
 
-		<script type="text/javascript" src="/3rdparty/jquery/jquery-2.1.4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			$.noConflict();
 		</script>

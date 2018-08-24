@@ -6,31 +6,85 @@
                     <li class="heading list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
-                             Danh muc
+                             Danh mục
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Địa điểm
                         </a>
                     </li>
                     <li class="active list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
-                             Danh muc 1
+                             Chủ đề
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
-                             Danh muc 2
+                             Dịch vụ của bạn
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
-                             Danh muc 3
+                             Danh bạ sper
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
-                             Danh muc 4
+                             Bộ sưu tập
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Video Review
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Nổi bật
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Khuyến mại
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Blog Sper
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Ví Sper
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Bảng tin Sper
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Diễn đàn Sper
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                             Tìm việc làm
                         </a>
                     </li>
                 </ul>
@@ -48,7 +102,7 @@
                                 <li role="presentation">
                                     <a href="#">
                                         <span class="fa fa-tags fa-1x"></span>
-                                        Khuyen mai
+                                        Khuyến mại
                                     </a>
                                 </li>
                             </ul>
@@ -57,17 +111,17 @@
                             <ul type="tabs" class="nav nav-tabs bd-none">
                                 <li role="presentation">
                                     <a href="#">
-                                        Tat ca
+                                        Tất cả
                                     </a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#">
-                                        Gan nhat
+                                        Gần nhất
                                     </a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#">
-                                        Moi nhat
+                                        Mới nhất
                                     </a>
                                 </li>
                             </ul>
@@ -77,18 +131,18 @@
                                 <ul type="tabs" class="pull-right nav nav-tabs bd-none">
                                     <li role="presentation" class="dropdown">
                                         <a class="data-toggle" href="#" data-toggle="dropdown">
-                                            Chu de 
+                                            Chủ đề 
                                             <span class="caret"></span>
                                         </a>
                                         <ul align="right" class="dropdown-menu dropdown-menu-right">
                                             <li>
                                                 <a href="#">
-                                                    Chu de 1
+                                                    Chủ đề 1
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    Chu de 2
+                                                    Chủ đề 2
                                                 </a>
                                             </li>
                                         </ul>
@@ -448,17 +502,17 @@
                             <ul type="tabs" class="nav nav-tabs bd-none">
                                 <li role="presentation">
                                     <a href="#">
-                                        Tat ca
+                                        Tất cả
                                     </a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#">
-                                        Gan nhat
+                                        Gần nhất
                                     </a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#">
-                                        Moi nhat
+                                        Mới nhất
                                     </a>
                                 </li>
                             </ul>

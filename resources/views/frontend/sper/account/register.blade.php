@@ -1,10 +1,10 @@
-<div tabindex="-1" role="dialog" class="modal fade" id="registerModal">
+<div tabindex="-1" role="dialog" class="modal fade" id="registerModal" ng-controller="Sper.Account.Register">
     <div role="document" class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header pd-0">
                 <h4 class="clearfix relative modal-title">
                     <p class="text-center mg-0 pd-1 w-100-p">
-                        Dang ky
+                        Đăng ký
                     </p>
                     <button type="button" class="absolute p-top-5 p-right-5 close" data-dismiss="modal" aria-label="Close">
                         <span class="glyphicon glyphicon-remove-circle"></span>
@@ -12,29 +12,29 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <form>
+                <form ng-submit="register()">
                     <div class="form-group">
-                        <input class="form-control" placeholder="Ten dang nhap" />
+                        <input class="form-control" placeholder="Tên đăng nhập" ng-model="username" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Ten hien thi" />
+                        <input class="form-control" placeholder="Tên hiển thị" ng-model="name" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Mat khau" />
+                        <input class="form-control" placeholder="Mật khẩu" ng-model="password" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Nhap lai mat khau" />
+                        <input class="form-control" placeholder="Nhập lại mật khẩu" ng-model="confirmPassword" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="So dien thoai" />
+                        <input class="form-control" placeholder="Số điện thoại" ng-model="phone" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Email" />
+                        <input class="form-control" placeholder="Email" ng-model="email" />
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-6">
-                                <input class="form-control" placeholder="Captcha" />
+                                <input class="form-control" placeholder="Captcha" ng-model="captcha" />
                             </div>
                             <div class="col-sm-6">
                                 <p class="form-control-static">
@@ -45,15 +45,23 @@
                     </div>
                     <div class="form-group">
                         <button class="btn-block btn btn-success">
-                            Dang ky
+                            Đăng ký
                         </button>
                     </div>
                     <div class="form-group">
                         <p class="text-center">
                             <small>
-                                 Bang viec dang ky ban da dong y voi sper ve
+                                 Bằng việc đăng ký bạn đã đồng ý với Sper về
                                 <br />
-                                 Dieu khoan dich vu va chinh sach bao mat 
+                                 
+                                <a href="#">
+                                    Điều khoản dịch vụ
+                                </a>
+                                 và 
+                                <a href="#">
+                                    chính sách bảo mật
+                                </a>
+                                 
                             </small>
                         </p>
                     </div>

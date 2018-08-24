@@ -6,7 +6,7 @@
                     <li role="presentation">
                         <a href="#">
                             <span class="fa fa-tags fa-1x"></span>
-                            Khuyen mai
+                            Khuyến mại
                         </a>
                     </li>
                 </ul>
@@ -15,17 +15,17 @@
                 <ul type="tabs" class="nav nav-tabs bd-none">
                     <li role="presentation">
                         <a href="#">
-                            Tat ca
+                            Tất cả
                         </a>
                     </li>
                     <li role="presentation">
                         <a href="#">
-                            Gan nhat
+                            Gần nhất
                         </a>
                     </li>
                     <li role="presentation">
                         <a href="#">
-                            Moi nhat
+                            Mới nhất
                         </a>
                     </li>
                 </ul>
@@ -35,18 +35,18 @@
                     <ul type="tabs" class="pull-right nav nav-tabs bd-none">
                         <li role="presentation" class="dropdown">
                             <a class="data-toggle" href="#" data-toggle="dropdown">
-                                Chu de 
+                                Chủ đề 
                                 <span class="caret"></span>
                             </a>
                             <ul align="right" class="dropdown-menu dropdown-menu-right">
                                 <li>
                                     <a href="#">
-                                        Chu de 1
+                                        Chủ đề 1
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        Chu de 2
+                                        Chủ đề 2
                                     </a>
                                 </li>
                             </ul>

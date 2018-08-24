@@ -1,4 +1,17 @@
 (function() {
+    console.log('go here');
+    jQuery(document).ready(function(){
+        console.log('ready');
+        setTimeout(function(){
+            jQuery('.dropdown-submenu > a.test').on("click", function (e) {
+                console.log('.dropdown-submenu > a.test clicked');
+                jQuery(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        }, 1000);
+        
+    });
     var sperStorage = {
         prefix: 'sper_',
         _getItem: function(key) {
@@ -207,13 +220,13 @@
                     service.token = token;
                     return sperApi.post(url, service, callback);
                 },
-                searchByCate: function(service) {
+                searchByCate: function(service, callback) {
                     var url = 'http://test.sper.com.vn/api/business/SearchServiceByCate';
                     service.idPartner = idPartner;
                     service.namePartner = namePartner;
                     service.key = MD5(idPartner + namePartner + keyPartner);
                     service.token = token;
-                    return sperApi.get(url, service, callback);
+                    return sperApi.post(url, service, callback);
                 },
                 searchByContent: function(service) {
                     var url = 'http://test.sper.com.vn/api/business/SearchServiceByContent';
@@ -237,7 +250,24 @@
     
     var sperMedia = {
         cities: false,
-        categories: false
+        categories: false,
+        eventListeners: {},
+        setCities: function(cities){
+            this.cities = cities;
+            this.notify('cities', cities);
+        },
+        notify: function(evt, data) {
+            var handlers = this.eventListeners[evt] || [];
+            handlers.forEach(function(handler){
+                handler.call(null, data);
+            });
+        },
+        listen: function(evt, handler) {
+            if(typeof this.eventListeners[evt] == 'undefined') {
+                this.eventListeners[evt] = [];
+            }
+            this.eventListeners[evt].push(handler);
+        }
     };
 
     sperApp.controller('Sper.Header', ['$scope', function($scope) {
@@ -281,8 +311,9 @@
 
 
         sperApi.category.getList({}, function (resp) {
-            $scope.categories = buildCategoryTree(resp.ResponseData);
+            $scope.categories = buildCategoryTree(resp.ResponseData.sort(function(a, b) { return a.position - b.position;  }));
             sperMedia.categories = $scope.categories;
+            console.log(sperMedia.categories);
             $scope.loadSelectedCategory();
             $scope.$apply();
         });
@@ -332,6 +363,42 @@
         $scope.selectCategory = function(category) {
             $scope.selectedCategory = category;
             $scope.selectedSubCategory = null;
+            $scope.reloadServices();
+        };
+
+        $scope.reloadServices = function() {
+            var currentLocation = {
+                latitude: 10.823099,
+                longitude: 106.629662
+            };
+            var distance = function(a, b) {
+                a.latitude = parseFloat(a.latitude);
+                b.latitude = parseFloat(b.latitude);
+                a.longitude = parseFloat(a.longitude);
+                b.longitude = parseFloat(b.longitude);
+                return Math.sqrt((a.latitude - b.latitude) * (a.latitude - b.latitude) + (a.longitude - b.longitude) * (a.longitude - b.longitude));
+            };
+            sperApi.business.service.searchByCate({
+                lstcategoryid: ($scope.selectedSubCategory && $scope.selectedSubCategory.categoryid) || $scope.selectedCategory.categoryid,
+                latitude: 10.823099,
+                longitude: 106.629662
+            }, function (resp) {
+                var services = resp.ResponseData;
+                if($scope.selectedOrderBy.index === 'newest') {
+                    services.sort(function(a, b){
+                        return a.createddate > b.createddate ? 1 : -1;
+                    });
+                }
+                if ($scope.selectedOrderBy.index === 'nearest') {
+                    services.sort(function (a, b) {
+                        return distance(a.address_identifier
+                            , currentLocation) - distance(b.address_identifier
+, currentLocation);
+                    });
+                }
+                $scope.services = services;
+                $scope.$apply();
+            });
         };
 
         $scope.orderBys = [{
@@ -352,12 +419,92 @@
         }];
         $scope.selectOrderBy = function(orderBy){
             $scope.selectedOrderBy = orderBy;
+            $scope.reloadServices();
         };
         $scope.selectedOrderBy = $scope.orderBys[0];
 
         $scope.selectSubCategory = function(subCategory) {
             $scope.selectedSubCategory = subCategory;
+            $scope.reloadServices();
         };
     }]);
 
+    sperApp.controller('Sper.Banner.Top', ['$scope', function ($scope) {
+        $scope.banners = [
+            {
+                bannerimg: '/images/top/1.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/top/2.png',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/top/3.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/top/4.jpg',
+                bannerlink: '/'
+            }
+        ];
+    }]);
+
+    sperApp.controller('Sper.Banner.Slideshow', ['$scope', function ($scope) {
+        $scope.banners = [
+            {
+                bannerimg: '/images/slideshow/1.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/slideshow/2.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/slideshow/3.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/slideshow/4.jpg',
+                bannerlink: '/'
+            },
+            {
+                bannerimg: '/images/slideshow/5.jpg',
+                bannerlink: '/'
+            }
+        ];
+    }]);
+    sperApp.controller('Sper.Account.Login', ['$scope', function ($scope) {
+        $scope.error = {};
+        $scope.login = function() {
+            $scope.error = {};
+            if(!$scope.username) {
+                $scope.error.username = true;
+                $scope.error.message = 'Bạn phải nhập tên đăng nhập';
+                $scope.$apply();
+                return false;
+            }
+            if (!$scope.password) {
+                $scope.error.password = true;
+                $scope.error.message = 'Bạn phải nhập mật khẩu';
+                $scope.$apply();
+                return false;
+            }
+            sperApi.account.get({
+                username: $scope.username,
+                password: $scope.password
+            }, function(resp) {
+                console.log(resp);
+                if(!resp.ResponseStatus.Status) {
+                    $scope.error.message = resp.ResponseStatus.Message;
+                    if(3 === resp.ResponseStatus.ReturnCode) {
+                        $scope.error.username = true;
+                    }
+                    $scope.$apply();
+                }
+            });
+        };
+    }]);
+    sperApp.controller('Sper.Account.Register', ['$scope', function ($scope) {
+    }]);
 })();

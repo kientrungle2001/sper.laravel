@@ -1,10 +1,14 @@
-<div class="carousel slide" id="slideshow" data-ride="carousel">
+<div class="carousel slide" id="slideshow" ng-controller="Sper.Banner.Slideshow" data-ride="carousel">
     <div role="listbox" class="carousel-inner">
-        <div class="active item">
-            <img class="img-responsive" src="http://placehold.it/1366x300" />
-        </div>
-        <div class="item">
-            <img class="img-responsive" src="http://placehold.it/1366x300" />
+        <div class="text-center item" ng-class="{'active': $index === 0}" ng-repeat="banner in banners">
+            <div class="row-pd-0 row">
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="%%banner.bannerimg%%" />
+                </div>
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="%%banner.bannerimg%%" />
+                </div>
+            </div>
         </div>
     </div>
     <a direction="left" role="button" class="carousel-control left" href="#slideshow" data-slide="prev">
