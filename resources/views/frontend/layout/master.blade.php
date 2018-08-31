@@ -31,8 +31,31 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" integrity="sha256-ruP2+uorUblSeg7Tozk75u8TaSUKRCZVvNV0zRGxkRQ=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-sanitize.min.js" integrity="sha256-FnMl43xSx3jHmcs7t2LJ3htfsCeo99XORPvzOVQN/tw=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/crypt.js"></script>
-		<script type="text/javascript" src="/js/angular/sper.js"></script>
 		<script type="text/javascript" src="/js/array.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+		<script type="text/javascript" src="/js/api.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/header.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/highlight.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/section.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/video/review.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/banner/top.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/banner/slideshow.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/account/login.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/account/register.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/map.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/section.js"></script>
+
+		<script type="text/javascript" src="/js/angular/sper/clientarea/branchmanagement.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/branchservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/changepassword.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/collection.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/createservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/feedback.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/info.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/privilege.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/service.js"></script>
+
+		<script type="text/javascript" src="/js/angular/sper.js"></script>
 		@include('frontend.sper.style')
 	</head>
 	<body ng-app="SperApp">

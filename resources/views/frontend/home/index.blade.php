@@ -5,5 +5,6 @@
 	@include('frontend.sper.service.highlight')
 	@include('frontend.sper.service.map')
 	@include('frontend.sper.service.section')
+	@include('frontend.sper.blog.section')
 	@include('frontend.sper.download.section')
 @stop

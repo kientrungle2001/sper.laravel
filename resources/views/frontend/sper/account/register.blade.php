@@ -14,21 +14,26 @@
             <div class="modal-body">
                 <form ng-submit="register()">
                     <div class="form-group">
+                        <p class="bg-danger pd-3 text-white form-control-static" ng-show="error.message">
+                            %%error.message%%
+                        </p>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': error.username}">
                         <input class="form-control" placeholder="Tên đăng nhập" ng-model="username" />
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Tên hiển thị" ng-model="name" />
+                    <div class="form-group" ng-class="{'has-error': error.fullname}">
+                        <input class="form-control" placeholder="Tên hiển thị" ng-model="fullname" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': error.password}">
                         <input class="form-control" placeholder="Mật khẩu" ng-model="password" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': error.confirmPassword}">
                         <input class="form-control" placeholder="Nhập lại mật khẩu" ng-model="confirmPassword" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': error.phone}">
                         <input class="form-control" placeholder="Số điện thoại" ng-model="phone" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': error.email}">
                         <input class="form-control" placeholder="Email" ng-model="email" />
                     </div>
                     <div class="form-group">

@@ -17,8 +17,8 @@
              Chủ đề
         </a>
     </li>
-    <li class="list-group-item">
-        <a href="#">
+    <li class="hide list-group-item">
+        <a href="/clientarea/service">
             <span class="glyphicon glyphicon-align-justify"></span>
              Dịch vụ của bạn
         </a>
@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="list-group-item">
-        <a href="#">
+        <a href="/clientarea/collection">
             <span class="glyphicon glyphicon-align-justify"></span>
              Bộ sưu tập
         </a>
@@ -54,30 +54,30 @@
         </a>
     </li>
     <li class="list-group-item">
-        <a href="#">
+        <a href="/blog">
             <span class="glyphicon glyphicon-align-justify"></span>
              Blog Sper
         </a>
     </li>
-    <li class="list-group-item">
+    <li class="hide list-group-item">
         <a href="#">
             <span class="glyphicon glyphicon-align-justify"></span>
              Ví Sper
         </a>
     </li>
     <li class="list-group-item">
-        <a href="#">
+        <a href="/news">
             <span class="glyphicon glyphicon-align-justify"></span>
-             Bảng tin Sper
+             Tin tức về Sper
         </a>
     </li>
-    <li class="list-group-item">
+    <li class="hide list-group-item">
         <a href="#">
             <span class="glyphicon glyphicon-align-justify"></span>
              Diễn đàn Sper
         </a>
     </li>
-    <li class="list-group-item">
+    <li class="hide list-group-item">
         <a href="#">
             <span class="glyphicon glyphicon-align-justify"></span>
              Tìm việc làm

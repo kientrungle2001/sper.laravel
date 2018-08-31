@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
 
 @section('content')
-	@include('frontend.sper.news.detail')
+	@include('frontend.sper.clientarea.info')
 @stop

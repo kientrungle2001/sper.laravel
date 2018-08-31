@@ -13,37 +13,95 @@
             </div>
             <form align="left" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <select class="form-control" ng-options="category.categoryid as category.categoryname for category in categories | orderBy: 'position'" ng-model="selectedCategoryId" ng-change="selectCategory()">
+                    <select class="input-sm form-control" ng-options="category.categoryid as category.categoryname for category in categories | orderBy: 'position'" ng-model="selectedCategoryId" ng-change="selectCategory()">
                          
                     </select>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <input class="form-control" style="width:280px" placeholder="Search" />
+                        <input class="input-sm form-control" style="width:280px" placeholder="Search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-default" style="height: 34px;">
-                                <span class="fs-20 glyphicon glyphicon-search"></span>
+                            <button class="btn btn-default btn-xs" style="height: 30px;">
+                                <span class="fs-14 glyphicon glyphicon-search"></span>
                             </button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCityId" ng-change="selectCity()">
+                    <select class="input-sm form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCityId" ng-change="selectCity()">
                          
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default">
-                        <span class="fs-20 glyphicon glyphicon-phone"></span>
+                    <button class="btn btn-default btn-xs" style="height: 30px;">
+                        <span class="fs-14 glyphicon glyphicon-phone"></span>
                          Tải App 
                     </button>
                 </div>
             </form>
             <ul align="right" class="navbar-collapse collapse nav navbar-nav navbar-right" id="top-menu">
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                    <a href="#" data-toggle="modal" data-target="#loginModal" ng-hide="user">
                         Đăng nhập
                     </a>
+                </li>
+                <li class="dropdown" ng-show="user">
+                    <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
+                        <span class="fs-20 fa fa-user fa-1x"></span>
+                         %%user.fullname%% 
+                        <span class="caret"></span>
+                         
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/clientarea/service">
+                                <span class="fa fa-cubes fa-1x"></span>
+                                 Dịch vụ của bạn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-credit-card fa-1x"></span>
+                                 Thanh toán
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-history fa-1x"></span>
+                                 Lịch sử
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/clientarea/collection">
+                                <span class="fa fa-bookmark fa-1x"></span>
+                                 Bộ sưu tập
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-trophy fa-1x"></span>
+                                 Điểm thưởng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/clientarea/feedback">
+                                <span class="fa fa-inbox fa-1x"></span>
+                                 Góp ý
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/clientarea/info">
+                                <span class="fa fa-user fa-1x"></span>
+                                 Cài đặt tài khoản
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/clientarea/logout">
+                                <span class="fa fa-power-off fa-1x"></span>
+                                 Đăng xuất
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">

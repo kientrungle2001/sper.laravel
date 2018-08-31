@@ -1,4 +1,4 @@
-<li class="media">
+<li class="d-table w-100-p media" ng-repeat="blog in blogs">
     <div class="media-left">
         <img class="img-circle media-object" src="http://placehold.it/64x64" />
     </div>
@@ -13,12 +13,12 @@
             <div class="pull-right">
                 <button class="btn btn-success">
                     <span class="glyphicon glyphicon-bookmark"></span>
-                     Luu bai blog 
+                     Lưu bài blog 
                 </button>
             </div>
         </div>
+        <strong>
+             %%blog.blog_title%% 
+        </strong>
     </div>
-    <strong>
-         Kham Pha khong gian doi vo chong da phong cach 
-    </strong>
 </li>
