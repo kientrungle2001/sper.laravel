@@ -1,32 +1,32 @@
-<div class="container">
+<div class="container mt-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
              Blog 
         </li>
     </ol>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-controller="Sper.Blog.Board">
         <div class="panel-heading pd-0">
             <div class="row">
                 <div class="col-md-6">
                     <ul align="justified" type="tabs" class="nav nav-tabs nav-justified bd-none">
-                        <li role="presentation" class="active">
-                            <a href="#">
-                                Moi nhat
+                        <li role="presentation" ng-class="{'active': orderBy == 'newest'}">
+                            <a href="#" onclick="return false;" ng-click="selectOrderBy('newest')">
+                                Mới nhất
                             </a>
                         </li>
-                        <li role="presentation">
-                            <a href="#">
-                                Xem nhieu nhat
+                        <li role="presentation" ng-class="{'active': orderBy == 'mostview'}">
+                            <a href="#" onclick="return false;" ng-click="selectOrderBy('mostview')">
+                                Xem nhiều nhất
                             </a>
                         </li>
-                        <li role="presentation">
-                            <a href="#">
-                                Kinh nghiem
+                        <li role="presentation" ng-class="{'active': orderBy == 'experience'}">
+                            <a href="#" onclick="return false;" ng-click="selectOrderBy('experience')">
+                                Kinh nghiệm
                             </a>
                         </li>
                     </ul>
@@ -34,7 +34,7 @@
                 <div class="col-md-6">
                     <div class="clearfix">
                         <ul type="tabs" class="pull-right nav nav-tabs bd-none">
-                            <li role="presentation" class="dropdown">
+                            <li role="presentation" class="dropdown dropdown-no-close">
                                 <a class="data-toggle" href="#" data-toggle="dropdown">
                                     Chu de 
                                     <span class="caret"></span>
@@ -59,222 +59,26 @@
         </div>
         <div class="panel-body pd-0">
             <div class="row-pd-5 mt-3 row">
-                <div class="col-md-3">
+                <div class="col-md-3" ng-repeat="item in items">
                     <div class="panel panel-default mb-2">
                         <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <img class="img-responsive" src="%%item.blog_img%%" />
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
                         <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
+                            <a href="/blog/detail?blog_id=%%item.id%%">
+                                <strong class="d-block" style="height: 40px; overflow: hidden;">
+                                    %%item.blog_title%%
+                                </strong>
+                            </a>
                         </div>
                         <div class="panel-footer">
                             <div class="clearfix">
                                 <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="panel panel-default mb-2">
-                        <div class="panel-heading pd-0">
-                            <img class="img-responsive" src="http://placehold.it/480x360" />
-                        </div>
-                        <div class="panel-body">
-                            <strong>
-                                Nhung cach thiet ke noi that khien trong nha rong rai hon
-                            </strong>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="clearfix">
-                                <span class="fa fa-bookmark fa-1x"></span>
-                                 200 
-                                <span class="fa fa-comments-o fa-1x"></span>
-                                 200 500 views 
+                                 %%item.blog_likes%% 
+                                <span class="far fa-comments fa-1x"></span>
+                                 %%item.blog_comments%% %%item.blog_views%% views 
                             </div>
                         </div>
                     </div>

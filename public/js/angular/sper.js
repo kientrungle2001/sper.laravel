@@ -35,6 +35,16 @@
 
     sperApp.controller('Sper.Service.Map', ['$scope', sper_service_map(sperApi, sperStorage, sperMedia)]);
 
+    sperApp.controller('Sper.Blog.Section', ['$scope', sper_blog_section(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.Blog.Detail', ['$scope', sper_blog_detail(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.Blog.Lastest', ['$scope', sper_blog_lastest(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.Blog.Board', ['$scope', sper_blog_board(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.Blog.Others', ['$scope', sper_blog_others(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.News.Board', ['$scope', sper_news_board(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.News.Detail', ['$scope', sper_news_detail(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.News.Featureds', ['$scope', sper_news_featureds(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.News.Others', ['$scope', sper_news_others(sperApi, sperStorage, sperMedia)]);
+
     sperApp.controller('Sper.ClientArea.BranchManagement', ['$scope', sper_clientarea_branchmanagement(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.BranchService', ['$scope', sper_clientarea_branchservice(sperApi, sperStorage, sperMedia)]);
@@ -44,6 +54,7 @@
     sperApp.controller('Sper.ClientArea.Collection', ['$scope', sper_clientarea_collection(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.CreateService', ['$scope', sper_clientarea_createservice(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.ClientArea.CreateProduct', ['$scope', sper_clientarea_createproduct(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.Feedback', ['$scope', sper_clientarea_feedback(sperApi, sperStorage, sperMedia)]);
 

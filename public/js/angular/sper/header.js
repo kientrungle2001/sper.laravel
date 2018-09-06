@@ -75,5 +75,10 @@ function sper_header(sperApi, sperStorage, sperMedia) {
             });
             return selectedCategory;
         };
+
+        $scope.logout = function() {
+            sperStorage.removeItem('user');
+            window.location.reload();
+        };
     };
 }

@@ -27,7 +27,7 @@
                              Dịch vụ của bạn
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="hide list-group-item">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Danh bạ sper
@@ -119,7 +119,7 @@
                         <div class="col-md-4">
                             <div class="clearfix">
                                 <ul type="tabs" class="pull-right nav nav-tabs bd-none">
-                                    <li role="presentation" class="dropdown">
+                                    <li role="presentation" class="dropdown dropdown-no-close">
                                         <a class="data-toggle" href="#" data-toggle="dropdown">
                                             Cong ty 
                                             <span class="caret"></span>
@@ -139,7 +139,7 @@
                                     </li>
                                 </ul>
                                 <ul type="tabs" class="pull-right nav nav-tabs bd-none">
-                                    <li role="presentation" class="dropdown">
+                                    <li role="presentation" class="dropdown dropdown-no-close">
                                         <a class="data-toggle" href="#" data-toggle="dropdown">
                                             Ha Noi 
                                             <span class="caret"></span>
@@ -196,7 +196,7 @@
                                              
                                         </div>
                                         <div class="pull-right">
-                                            <span class="fa fa-bookmark fa-1x"></span>
+                                            <span class="pointer fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
                                         </div>
                                     </div>
                                 </div>

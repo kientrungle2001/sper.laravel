@@ -109,11 +109,11 @@ function getSperApi(sperStorage) {
                 return sperApi.get(url, account, callback);
             },
             changePass: function (account, callback) {
-                var url = 'http://test.sper.com.vn/api/account/ChangePass';
+                var url = 'http://test.sper.com.vn/api/authen/ChangePass';
                 account.idPartner = idPartner;
                 account.namePartner = namePartner;
                 account.key = MD5(account.username + idPartner + namePartner + keyPartner);
-                account.token = token;
+                account.token = account.token || token;
                 return sperApi.get(url, account, callback);
             },
             changeAvatar: function (account, callback) {
@@ -121,21 +121,21 @@ function getSperApi(sperStorage) {
                 account.idPartner = idPartner;
                 account.namePartner = namePartner;
                 account.key = MD5(account.accid + idPartner + namePartner + keyPartner);
-                account.token = token;
+                account.token = account.token || token;
                 return sperApi.post(url, account, callback);
             }
         },
         business: {
             service: {
-                add: function (service) {
+                add: function (service,callback) {
                     var url = 'http://test.sper.com.vn/api/business/AddService';
                     service.idPartner = idPartner;
                     service.namePartner = namePartner;
                     service.key = MD5(service.accid + idPartner + namePartner + keyPartner);
-                    service.token = token;
+                    service.token = service.token || token;
                     return sperApi.post(url, service, callback);
                 },
-                get: function (service) {
+                get: function (service, callback) {
                     var url = 'http://test.sper.com.vn/api/business/GetService';
                     service.idPartner = idPartner;
                     service.namePartner = namePartner;
@@ -143,12 +143,12 @@ function getSperApi(sperStorage) {
                     service.token = token;
                     return sperApi.get(url, service, callback);
                 },
-                update: function (service) {
+                update: function (service, callback) {
                     var url = 'http://test.sper.com.vn/api/business/UpdateService';
                     service.idPartner = idPartner;
                     service.namePartner = namePartner;
                     service.key = MD5(service.serviceid + idPartner + namePartner + keyPartner);
-                    service.token = token;
+                    service.token = service.token || token;
                     return sperApi.post(url, service, callback);
                 },
                 searchByCate: function (service, callback) {
@@ -167,16 +167,67 @@ function getSperApi(sperStorage) {
                     service.token = token;
                     return sperApi.get(url, service, callback);
                 }
+            },
+            product: {
+                getList: function(product, callback){
+                    var url = 'http://test.sper.com.vn/api/business/GetListProduct';
+                    product.idPartner = idPartner;
+                    product.namePartner = namePartner;
+                    product.key = MD5(product.serviceid + idPartner + namePartner + keyPartner);
+                    return sperApi.get(url, product, callback);
+                },
+                add: function(product, callback) {
+                    var url = 'http://test.sper.com.vn/api/business/AddProduct';
+                    product.idPartner = idPartner;
+                    product.namePartner = namePartner;
+                    product.key = MD5(product.serviceid + idPartner + namePartner + keyPartner);
+                    return sperApi.post(url, product, callback);
+                }
             }
         },
 
         content: {
             blog: {
                 find: function(blog, callback) {
-                    jQuery.ajax({
+                    return jQuery.ajax({
                         url: '/api/blogs/find',
                         method: 'get',
                         data: blog,
+                        success: callback
+                    });
+                },
+                get: function(blog_id, callback) {
+                    return jQuery.ajax({
+                        url: '/api/blogs/' + blog_id,
+                        method: 'get',
+                        data: {blog_id: blog_id},
+                        success: callback
+                    });                	
+                }
+            },
+            review: {
+                find: function (review, callback) {
+                    return jQuery.ajax({
+                        url: '/api/reviews/find',
+                        method: 'get',
+                        data: review,
+                        success: callback
+                    });
+                }
+            },
+            article: {
+                find: function (article, callback) {
+                    return jQuery.ajax({
+                        url: '/api/articles/find',
+                        method: 'get',
+                        data: article,
+                        success: callback
+                    });
+                },
+                get: function(article_id, callback) {
+                    return jQuery.ajax({
+                        url: '/articles/' + article_id,
+                        method: 'get',
                         success: callback
                     });
                 }

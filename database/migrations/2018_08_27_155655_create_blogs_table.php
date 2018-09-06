@@ -19,6 +19,11 @@ class CreateBlogsTable extends Migration
             $table->string('blog_alias');
             $table->string('blog_author');
             $table->string('blog_category_id');
+            $table->string('blog_img');
+            $table->integer('blog_views');
+            $table->integer('blog_comments');
+            $table->integer('blog_likes');
+            $table->integer('blog_shares');
             $table->text('blog_content');
             $table->timestamps();
         });

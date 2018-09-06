@@ -114,6 +114,42 @@
     .bg-ddd{background: #ddd;}
     .bg-76 {background: #767676;}
 
+    /* bg social buttons */
+    .bg-phone {
+        background: #00710C !important;
+        background-color: #00710C !important;
+        color: #fff;
+    }
+
+    .bg-facebook {
+        background: #414E98 !important;
+        background-color: #414E98 !important;
+        color: #fff;
+    }
+
+    .bg-google-plus {
+        background: #C5261C !important;
+        background-color: #C5261C !important;
+        color: #fff;
+    }
+
+    .btn-login-social, .login-icon {
+        border: none;
+        border-radius: 0;
+    }
+
+    .login-icon span {
+        width: 10px;
+        display: inline-block;
+    }
+
+    .btn-checkbox span.glyphicon {    			
+        opacity: 0;				
+    }
+    .btn-checkbox.active span.glyphicon {				
+        opacity: 1;				
+    }
+
     /* Border */
     .bd-none{border: none;}
     .bd-1{border:1px solid #ddd;}
@@ -206,7 +242,7 @@
     }
 
     /* Form and Inputs */
-    input,select,textarea,button {
+    input,select,textarea,button, .btn, .panel, .modal-content {
         border-radius: 0 !important;
     }
 
@@ -293,6 +329,12 @@
         right: 100%;
         margin-top: -1px;
     }
+
+    .dropdown-no-close .dropdown-menu {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
     /* Footer */
     .no-padding {
         padding-left: 0;

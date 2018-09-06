@@ -12,5 +12,8 @@ function sper_blog_section(sperApi, sperStorage, sperMedia) {
             });
         };
         $scope.selectOrderBy('newest');
+        $scope.toDate = function(str) {
+            return new Date(str);
+        };
     };
 }

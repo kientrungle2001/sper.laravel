@@ -23,7 +23,7 @@
              Dịch vụ của bạn
         </a>
     </li>
-    <li class="list-group-item">
+    <li class="hide list-group-item">
         <a href="#">
             <span class="glyphicon glyphicon-align-justify"></span>
              Danh bạ sper

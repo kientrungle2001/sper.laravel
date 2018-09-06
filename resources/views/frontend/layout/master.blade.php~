@@ -4,7 +4,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels</title>
+		<title>CÔNG TY TNHH TM VÀ DV SPER</title>
 		<link rel="manifest" href="http://test1sn.vn/manifest.json">
 		<meta property="og:type"  content="og:article" />
 		<meta property="og:image" content="http://test1sn.vn/default/skin/nobel/themes/story/media/logo.png"/> 
@@ -15,14 +15,14 @@
 		<meta name="keywords" content="Giáo dục" />
 		<meta name="description" content="Công Ty Cổ Phần Giáo Dục Phát Triển Trí Tuệ Và Sáng Tạo Next Nobels" />
 
-		<script type="text/javascript" src="/3rdparty/jquery/jquery-2.1.4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			$.noConflict();
 		</script>
 		<script type="text/javascript" src="/3rdparty/bootstrap3/js/bootstrap.min.js"></script>
 		<link href='/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="/3rdparty/tinymce/tinymce.min.js"></script>
-		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/fontawesome-5.3.1/css/all.min.css" />
 
 		<script type="text/javascript">
 			BASE_URL = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
@@ -31,10 +31,37 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" integrity="sha256-ruP2+uorUblSeg7Tozk75u8TaSUKRCZVvNV0zRGxkRQ=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-sanitize.min.js" integrity="sha256-FnMl43xSx3jHmcs7t2LJ3htfsCeo99XORPvzOVQN/tw=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/crypt.js"></script>
+		<script type="text/javascript" src="/js/array.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+		<script type="text/javascript" src="/js/api.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/header.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/highlight.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/section.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/video/review.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/banner/top.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/banner/slideshow.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/account/login.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/account/register.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/map.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/section.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/detail.js"></script>
+
+		<script type="text/javascript" src="/js/angular/sper/clientarea/branchmanagement.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/branchservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/changepassword.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/collection.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/createservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/feedback.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/info.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/privilege.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/service.js"></script>
+
 		<script type="text/javascript" src="/js/angular/sper.js"></script>
-		@include('frontend.common.style')
+		@include('frontend.sper.style')
 	</head>
 	<body ng-app="SperApp">
+			@include('frontend.sper.account.login')
+			@include('frontend.sper.account.register')
 			@include('frontend.sper.banner.top')
 			@include('frontend.sper.header.menu')
 			

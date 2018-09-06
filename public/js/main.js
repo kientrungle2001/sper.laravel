@@ -1,10 +1,7 @@
 jQuery(document).ready(function () {
     setTimeout(function () {
-        jQuery('.dropdown-submenu > a.test').on("click", function (e) {
-            console.log('.dropdown-submenu > a.test clicked');
-            jQuery(this).next('ul').toggle();
+        jQuery(document).on('click', '.dropdown-no-close .dropdown-menu', function (e) {
             e.stopPropagation();
-            e.preventDefault();
         });
     }, 1000);
 
@@ -108,4 +105,27 @@ function getSperMedia() {
             this.eventListeners[evt].push(handler);
         }
     };
+}
+
+function handleUploadInfo(event) {
+    var uploader = event.target;
+    if(uploader.files.length) {
+        
+    }
+}
+
+/**
+ * onload: function(reader) {
+ *      reader.result;
+ * }
+ * onerror: function(error){
+ * }
+ */
+function getBase64(file, onload, onerror) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        onload(reader);
+    };
+    reader.onerror = onerror;
 }

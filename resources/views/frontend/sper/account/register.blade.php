@@ -59,11 +59,11 @@
                                  Bằng việc đăng ký bạn đã đồng ý với Sper về
                                 <br />
                                  
-                                <a href="#">
+                                <a class="text-service" href="#">
                                     Điều khoản dịch vụ
                                 </a>
                                  và 
-                                <a href="#">
+                                <a class="text-service" href="#">
                                     chính sách bảo mật
                                 </a>
                                  
@@ -76,7 +76,7 @@
                 <p class="text-center">
                     <small>
                          Bạn đã có tài khoản? Vui lòng 
-                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">
+                        <a class="text-service" href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">
                             Đăng nhập
                         </a>
                          

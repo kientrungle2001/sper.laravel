@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container mt-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
-             Tai khoan 
+             Tài khoản 
         </li>
     </ol>
 </div>
-<div class="container">
+<div class="container" ng-controller="Sper.ClientArea.Feedback">
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">

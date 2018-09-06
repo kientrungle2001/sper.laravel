@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
@@ -10,7 +10,7 @@
         </li>
     </ol>
 </div>
-<div class="container">
+<div class="container" ng-controller="Sper.ClientArea.BranchManagement">
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">

@@ -31,7 +31,7 @@
                          
                     </div>
                     <div class="pull-right">
-                        <span class="fa fa-bookmark fa-1x"></span>
+                        <span class="pointer fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
                     </div>
                 </div>
             </div>

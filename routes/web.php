@@ -33,17 +33,18 @@ Route::get('/clientarea/branchservice', 'ClientareaController@branchservice');
 Route::get('/clientarea/changepassword', 'ClientareaController@changepassword');
 Route::get('/clientarea/collection', 'ClientareaController@collection');
 Route::get('/clientarea/createservice', 'ClientareaController@createservice');
+Route::get('/clientarea/createproduct', 'ClientareaController@createproduct');
 Route::get('/clientarea/feedback', 'ClientareaController@feedback');
 Route::get('/clientarea/privilege', 'ClientareaController@privilege');
 Route::get('/clientarea/service', 'ClientareaController@service');
 
 Use App\Blog;
+Use App\Review;
+Use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
  
 Route::get('blogs', function() {
-    // If the Content-Type and Accept headers are set to 'application/json', 
-    // this will return a JSON structure. This will be cleaned up later.
     return Blog::all();
 });
 
@@ -60,12 +61,56 @@ Route::post('blogs', function(Request $request) {
 Route::put('blogs/{id}', function(Request $request, $id) {
     $blog = Blog::findOrFail($id);
     $blog->update($request->all());
-
     return $blog;
 });
 
 Route::delete('blogs/{id}', function($id) {
     Blog::find($id)->delete();
+    return 204;
+});
 
+Route::get('reviews/find', 'ReviewsController@find');
+ 
+Route::get('reviews/{id}', function($id) {
+    return Review::find($id);
+});
+
+Route::post('reviews', function(Request $request) {
+    return Review::create($request->all);
+});
+
+Route::put('reviews/{id}', function(Request $request, $id) {
+    $review = Review::findOrFail($id);
+    $review->update($request->all());
+    return $review;
+});
+
+Route::delete('reviews/{id}', function($id) {
+    Review::find($id)->delete();
+    return 204;
+});
+
+Route::get('articles', function() {
+    return Article::all();
+});
+
+Route::get('articles/find', 'ArticlesController@find');
+ 
+Route::get('articles/{id}', function($id) {
+    return Article::find($id);
+});
+
+Route::post('articles', function(Request $request) {
+    return Article::create($request->all);
+});
+
+Route::put('articles/{id}', function(Request $request, $id) {
+    $article = Article::findOrFail($id);
+    $article->update($request->all());
+    return $article;
+});
+
+Route::delete('articles/{id}', function($id) {
+    Article::find($id)->delete();
     return 204;
 });

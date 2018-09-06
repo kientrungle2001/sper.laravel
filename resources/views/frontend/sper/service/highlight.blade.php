@@ -41,7 +41,7 @@
                         <div class="col-md-3">
                             <div class="clearfix">
                                 <ul type="tabs" class="pull-right tabs-black tabs-no-bg nav nav-tabs bd-none">
-                                    <li role="presentation" class="dropdown">
+                                    <li role="presentation" class="dropdown dropdown-no-close">
                                         <a class="data-toggle" href="#" data-toggle="dropdown">
                                             %%selectedSubCategory.categoryname || 'Chủ đề'%% 
                                             <span class="caret"></span>

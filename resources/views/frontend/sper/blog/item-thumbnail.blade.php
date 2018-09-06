@@ -1,19 +1,23 @@
-<div class="col-md-3">
+<div class="col-md-3" ng-repeat="item in items">
     <div class="panel panel-default mb-2">
         <div class="panel-heading pd-0">
-            <img class="img-responsive" src="http://placehold.it/480x360" />
+            <div class="embed-responsive embed-responsive-16by9">
+                <img class="img-responsive" src="%%item.blog_img%%" />
+            </div>
         </div>
         <div class="panel-body">
-            <strong>
-                Nhung cach thiet ke noi that khien trong nha rong rai hon
-            </strong>
+            <a href="/blog/detail?blog_id=%%item.id%%">
+                <strong class="d-block" style="height: 40px; overflow: hidden;">
+                    %%item.blog_title%%
+                </strong>
+            </a>
         </div>
         <div class="panel-footer">
             <div class="clearfix">
                 <span class="fa fa-bookmark fa-1x"></span>
-                 200 
-                <span class="fa fa-comments-o fa-1x"></span>
-                 200 500 views 
+                 %%item.blog_likes%% 
+                <span class="far fa-comments fa-1x"></span>
+                 %%item.blog_comments%% %%item.blog_views%% views 
             </div>
         </div>
     </div>

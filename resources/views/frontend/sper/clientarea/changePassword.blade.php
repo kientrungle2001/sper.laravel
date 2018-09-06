@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container mt-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
-             Tai khoan 
+             Tài khoản 
         </li>
     </ol>
 </div>
-<div class="container">
+<div class="container" ng-controller="Sper.ClientArea.ChangePassword">
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
@@ -104,12 +104,19 @@
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal">
+                        <div class="form-group" ng-show="showMessage">
+                            <div class="col-md-9 col-md-offset-3" mdo="3">
+                                <p class="form-control-static pd-3" ng-class="{'bg-success': success, 'bg-danger': !success}">
+                                    %%message%%
+                                </p>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">
                                 Mật khẩu cũ
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="oldPassword" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -117,7 +124,7 @@
                                 Mật khẩu mới
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="newPassword" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -125,7 +132,7 @@
                                 Nhập lại Mật khẩu mới
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="confirmNewPassword" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -133,7 +140,7 @@
                                 <button class="btn btn-default">
                                     Hủy bỏ
                                 </button>
-                                <button class="btn btn-success">
+                                <button class="btn btn-success" ng-click="update()">
                                     Đồng ý
                                 </button>
                             </div>

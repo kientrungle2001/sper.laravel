@@ -45,7 +45,7 @@
                         Đăng nhập
                     </a>
                 </li>
-                <li class="dropdown" ng-show="user">
+                <li class="dropdown dropdown-no-close" ng-show="user">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
                         <span class="fs-20 fa fa-user fa-1x"></span>
                          %%user.fullname%% 
@@ -96,30 +96,67 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/clientarea/logout">
+                            <a href="/clientarea/logout" ng-click="logout()" onclick="return false;">
                                 <span class="fa fa-power-off fa-1x"></span>
                                  Đăng xuất
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown dropdown-no-close">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
-                        <span class="fs-20 fa fa-bell fa-1x"></span>
+                        <span class="fs-20 far fa-bell fa-1x"></span>
                     </a>
-                    <div class="dropdown-menu">
-                         Thong bao 1
-                        <br />
-                         Thong bao 2
-                        <br />
-                         Thong bao 3
-                        <br />
-                         Thong bao 4
-                        <br />
-                         
+                    <div class="dropdown-menu" style="width: 400px;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading pd-0">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul align="justified" type="tabs" class="nav nav-tabs nav-justified bd-none">
+                                            <li role="presentation" class="active" ng-class="{'active': orderBy == 'me'}">
+                                                <a href="#" onclick="return false;" ng-click="selectOrderBy('me')">
+                                                    Của tôi
+                                                </a>
+                                            </li>
+                                            <li role="presentation" ng-class="{'active': orderBy == 'service'}">
+                                                <a href="#" onclick="return false;" ng-click="selectOrderBy('service')">
+                                                    Dịch vụ
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body pd-0">
+                                <ul class="media-list">
+                                    <div class="media bb-1">
+                                        <div class="media-left pd-1">
+                                            <img class="img-circle media-object" src="http://placehold.it/48x48" />
+                                        </div>
+                                        <div class="media-body pd-1">
+                                            <a href="#">
+                                                <small>
+                                                    Chúc mừng bạn đã đăng ký tài khoản thành công, chúng tôi rất hân hạnh được phục vụ quý khách hàng
+                                                </small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left pd-1">
+                                            <img class="img-circle media-object" src="http://placehold.it/48x48" />
+                                        </div>
+                                        <div class="media-body pd-1">
+                                            <small>
+                                                Chúc mừng bạn đã đăng ký tài khoản thành công, chúng tôi rất hân hạnh được phục vụ quý khách hàng
+                                            </small>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown dropdown-no-close">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
                         <span class="fs-20 fa fa-shopping-cart fa-1x"></span>
                         <span class="hidden badge bg-red">
@@ -138,15 +175,26 @@
                          
                     </div>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown dropdown-no-close">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
                         <span class="fs-20 glyphicon glyphicon-plus-sign"></span>
                     </a>
-                    <div class="dropdown-menu">
-                         Viet bai blog 
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li style="width: 250px;">
+                            <div class="media">
+                                <div class="media-left pd-3">
+                                    <span class="far fa-star fa-2x"></span>
+                                </div>
+                                <div class="media-body">
+                                    <a style="white-space: normal;line-height: 25px;" href="#">
+                                         Viết blog chia sẻ trải nghiệm cho cộng đồng
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown dropdown-no-close">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
                         <img style="width: 20px; height: 20px;" src="/images/flag/vn.png" />
                     </a>

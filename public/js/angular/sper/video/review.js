@@ -1,17 +1,15 @@
 function sper_video_review(sperApi, sperStorage, sperMedia) {
     return function ($scope) {
-
-
         $scope.currentLocation = sperMedia.getCurrentLocation();
         sperMedia.listen('location', function (coords) {
             $scope.currentLocation = coords;
-            $scope.reloadServices();
+            $scope.reloadReviews();
         });
 
         var categoryIntervalId = setInterval(function () {
             if (sperMedia.categories) {
                 $scope.categories = sperMedia.categories;
-                $scope.selectCategory($scope.categories[0]);
+                //$scope.selectCategory($scope.categories[0]);
                 $scope.$apply();
                 clearInterval(categoryIntervalId);
             }
@@ -28,46 +26,23 @@ function sper_video_review(sperApi, sperStorage, sperMedia) {
         $scope.selectCategory = function (category) {
             $scope.selectedCategory = category;
             $scope.selectedSubCategory = null;
-            $scope.reloadServices();
+            $scope.reloadReviews();
         };
 
-        $scope.reloadServices = function () {
-            if (!$scope.currentLocation) {
-                return false;
-            }
-            if (!$scope.selectedCategory) {
-                return false;
-            }
+        $scope.reloadReviews = function () {
             var currentLocation = $scope.currentLocation || {
                 latitude: 10.823099,
                 longitude: 106.629662
             };
-            var distance = function (a, b) {
-                a.latitude = parseFloat(a.latitude);
-                b.latitude = parseFloat(b.latitude);
-                a.longitude = parseFloat(a.longitude);
-                b.longitude = parseFloat(b.longitude);
-                return Math.sqrt((a.latitude - b.latitude) * (a.latitude - b.latitude) + (a.longitude - b.longitude) * (a.longitude - b.longitude));
-            };
-            sperApi.business.service.searchByCate({
-                lstcategoryid: ($scope.selectedSubCategory && $scope.selectedSubCategory.categoryid) || $scope.selectedCategory.categoryid,
+            sperApi.content.review.find({
+                review_category_id: '',
                 latitude: currentLocation.latitude,
-                longitude: currentLocation.longitude
+                longitude: currentLocation.longitude,
+                page_size: 8
             }, function (resp) {
-                var services = resp.ResponseData;
-                if ($scope.selectedOrderBy.index === 'newest') {
-                    services.sort(function (a, b) {
-                        return a.createddate > b.createddate ? 1 : -1;
-                    });
-                }
-                if ($scope.selectedOrderBy.index === 'nearest') {
-                    services.sort(function (a, b) {
-                        return distance(a.address_identifier
-                            , currentLocation) - distance(b.address_identifier
-                                , currentLocation);
-                    });
-                }
-                $scope.services = services;
+                var items = resp.items;
+                $scope.items = items;
+                
                 $scope.$apply();
             });
         };
@@ -90,13 +65,15 @@ function sper_video_review(sperApi, sperStorage, sperMedia) {
         }];
         $scope.selectOrderBy = function (orderBy) {
             $scope.selectedOrderBy = orderBy;
-            $scope.reloadServices();
+            $scope.reloadReviews();
         };
         $scope.selectedOrderBy = $scope.orderBys[0];
 
         $scope.selectSubCategory = function (subCategory) {
             $scope.selectedSubCategory = subCategory;
-            $scope.reloadServices();
+            $scope.reloadReviews();
         };
+
+        $scope.reloadReviews();
     };
 }

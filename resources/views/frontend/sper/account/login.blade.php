@@ -27,11 +27,18 @@
                     <div class="form-group">
                         <div class="clearfix">
                             <div class="pull-left">
-                                <input type="checkbox" value="1" ng-model="remember" />
-                                 Lưu mật khẩu 
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn-checkbox btn-xs btn btn-default">
+                                        <input type="checkbox" value="1" ng-model="remember" autocomplete="off" />
+                                        <span class="glyphicon glyphicon-ok"></span>
+                                    </label>
+                                </div>
+                                <span class="d-inline-block pl-3">
+                                    Lưu mật khẩu
+                                </span>
                             </div>
                             <div class="pull-right">
-                                <a href="#" onclick="jQuery('#forgotPasswordModal').modal('show');" data-dismiss="modal">
+                                <a class="text-service" href="#" onclick="jQuery('#forgotPasswordModal').modal('show');" data-dismiss="modal">
                                     Quên mật khẩu
                                 </a>
                             </div>
@@ -49,38 +56,38 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="login-icon bg-google-phone input-group-addon">
+                            <div class="login-icon bg-phone input-group-addon">
                                 <span class="fa fa-phone fa-1x"></span>
                             </div>
-                            <button class="btn-block btn btn-success">
+                            <a class="btn-block btn-login-social btn btn-success">
                                  Đăng nhập bằng điện thoại 
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="login-icon bg-google-facebook input-group-addon">
-                                <span class="fa fa-facebook fa-1x"></span>
+                            <div class="login-icon bg-facebook input-group-addon">
+                                <span class="fab fa-facebook-f fa-1x"></span>
                             </div>
-                            <button class="btn-block btn btn-primary">
+                            <a class="btn-block btn-login-social btn btn-primary">
                                  Đăng nhập bằng Facebook 
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="login-icon bg-google-plus input-group-addon">
-                                <span class="fa fa-google-plus fa-1x"></span>
+                                <span class="fab fa-google-plus-g fa-1x"></span>
                             </div>
-                            <button class="btn-block btn btn-danger">
+                            <a class="btn-block btn-login-social btn btn-danger">
                                  Đăng nhập bằng Google Plus 
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="form-group">
                         <p class="text-center">
                              Bạn chưa có tài khoản? 
-                            <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">
+                            <a class="text-service" href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">
                                 Đăng ký
                             </a>
                              

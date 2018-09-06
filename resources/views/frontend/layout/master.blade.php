@@ -22,7 +22,7 @@
 		<script type="text/javascript" src="/3rdparty/bootstrap3/js/bootstrap.min.js"></script>
 		<link href='/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="/3rdparty/tinymce/tinymce.min.js"></script>
-		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/fontawesome-5.3.1/css/all.min.css" />
 
 		<script type="text/javascript">
 			BASE_URL = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
@@ -43,13 +43,24 @@
 		<script type="text/javascript" src="/js/angular/sper/account/login.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/account/register.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/service/map.js"></script>
+		
 		<script type="text/javascript" src="/js/angular/sper/blog/section.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/detail.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/lastest.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/board.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/blog/others.js"></script>
+
+		<script type="text/javascript" src="/js/angular/sper/news/board.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/news/detail.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/news/featureds.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/news/others.js"></script>
 
 		<script type="text/javascript" src="/js/angular/sper/clientarea/branchmanagement.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/branchservice.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/changepassword.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/collection.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/createservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/createproduct.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/feedback.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/info.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/privilege.js"></script>

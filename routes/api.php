@@ -47,3 +47,6 @@ Route::delete('blogs/{id}', function($id) {
 
     return 204;
 });
+
+Route::get('reviews/find', 'ReviewsController@find');
+Route::get('articles/find', 'ArticlesController@find');

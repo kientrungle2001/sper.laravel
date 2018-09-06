@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container mt-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
-             Tai khoan 
+             Tài khoản 
         </li>
     </ol>
 </div>
-<div class="container">
+<div class="container" ng-controller="Sper.ClientArea.Info">
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
@@ -109,7 +109,13 @@
                                 Ảnh đại diện
                             </label>
                             <div class="col-md-9">
-                                <img class="img-circle" src="http://placehold.it/64x64" />
+                                <img class="img-circle" id="userAvatar" src="%% user.avatar || 'http://placehold.it/64x64'%%" />
+                                <div class="mt-3">
+                                    <button class="btn btn-primary" onclick="jQuery('#avatarSelector').click();">
+                                        Đổi ảnh đại diện
+                                    </button>
+                                    <input class="hide" type="file" id="avatarSelector" onchange="handleUploadInfo(event)" />
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -117,7 +123,7 @@
                                 Tên đăng nhập
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.user_identifier.username" readonly="readonly" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -125,7 +131,7 @@
                                 Tên hiển thị
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.fullname" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -133,7 +139,7 @@
                                 Số điện thoại
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.phone" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -141,7 +147,7 @@
                                 Email
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.email" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -149,7 +155,7 @@
                                 Địa chỉ
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.address_identifier.addressname" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -157,12 +163,12 @@
                                 Thành phố
                             </label>
                             <div class="col-md-9">
-                                <input class="form-control" />
+                                <input class="form-control" ng-model="user.address_identifier.city" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-9 col-md-offset-3" mdo="3">
-                                <button class="btn-block btn btn-success">
+                                <button class="btn-block btn btn-success" ng-click="update()">
                                     Cập nhật thông tin cá nhân
                                 </button>
                             </div>

@@ -31,6 +31,10 @@ class ClientareaController extends Controller
         return view('frontend.clientarea.createservice');
     }
 
+    public function createproduct(Request $request) {
+        return view('frontend.clientarea.createproduct');
+    }
+
     public function feedback(Request $request) {
         return view('frontend.clientarea.feedback');
     }
