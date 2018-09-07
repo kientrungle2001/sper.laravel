@@ -14,7 +14,7 @@
                             <div class="clearfix">
                                 <div class="pull-right">
                                     <button class="btn-flex btn btn-success" ng-click="bookmark(article)">
-                                        <span class="fa fa-bookmark fa-1x"></span>
+                                        <span class="bookmark-scale fa fa-bookmark fa-1x"></span>
                                          Lưu bài viết
                                     </button>
                                 </div>

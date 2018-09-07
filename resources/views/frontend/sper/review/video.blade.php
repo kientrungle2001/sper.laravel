@@ -126,33 +126,22 @@
                         </div>
                     </div>
                     <div class="panel-body" style="height: 80px; overflow: hidden;">
-                        <a href="#">
-                            <small>
-                                %%item.review_title%%
-                            </small>
+                        <a class="text-service-highlight text-justify text-bold" href="#">
+                            %%item.review_title%%
                         </a>
-                        <div class="hide clearfix">
-                            <div class="pull-left">
-                                <span class="glyphicon glyphicon-map-marker"></span>
-                                 2 chi nhanh
-                            </div>
-                            <div class="pull-right">
-                                To doi
-                            </div>
-                        </div>
                     </div>
                     <div class="panel-footer">
                         <div class="clearfix">
-                            <div class="pull-left">
-                                <span class="far fa-heart fa-1x"></span>
+                            <div class="fs-13 pull-left">
+                                <span class="fs-13 far fa-heart fa-1x"></span>
                                  %%item.review_likes%% 
-                                <span class="far fa-comments fa-1x"></span>
+                                <span class="fs-13 far fa-comments fa-1x"></span>
                                  %%item.review_comments%% 
-                                <span class="fas fa-share-alt fa-1x"></span>
+                                <span class="fs-13 fas fa-share-alt fa-1x"></span>
                                  %%item.review_shares%% 
                             </div>
                             <div class="pull-right">
-                                <span class="pointer fa fa-bookmark fa-1x" ng-click="bookmark(item)"></span>
+                                <span class="pointer bookmark-scale fa fa-bookmark fa-1x" ng-click="bookmark(item)"></span>
                             </div>
                         </div>
                     </div>

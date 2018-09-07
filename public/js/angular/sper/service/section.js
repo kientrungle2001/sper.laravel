@@ -7,14 +7,10 @@ function sper_service_section(sperApi, sperStorage, sperMedia) {
             $scope.reloadServices();
         });
 
-        var categoryIntervalId = setInterval(function () {
-            if (sperMedia.categories) {
-                $scope.categories = sperMedia.categories;
-                $scope.selectCategory($scope.categories[0]);
-                $scope.$apply();
-                clearInterval(categoryIntervalId);
-            }
-        }, 10);
+        sperMedia.listen('categories', function (categories) {
+            $scope.categories = categories;
+            $scope.$apply();
+        });
 
         $scope.selectCategory = function (category) {
             $scope.selectedCategory = category;

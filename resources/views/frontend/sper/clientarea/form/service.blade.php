@@ -26,7 +26,7 @@
                          %%product.countShare%% 
                     </div>
                     <div class="pull-right">
-                        <span class="glyphicon glyphicon-trash" ng-click="delete(product)"></span>
+                        <span class="pointer glyphicon glyphicon-trash" ng-click="delete(product)"></span>
                     </div>
                 </div>
                 <div class="clearfix">

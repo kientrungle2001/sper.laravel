@@ -3,11 +3,11 @@
         <div class="bg-white-i panel-heading pd-0">
             <div class="row">
                 <div class="col-md-3">
-                    <ul type="tabs" class="text-uppercase tabs-no-border tabs-no-bg nav nav-tabs bd-none">
+                    <ul type="tabs" class="nav-sper-heading nav nav-tabs">
                         <li role="presentation">
-                            <a class="text-service relative" href="#" onclick="return false;">
-                                <span class="fs-25 absolute p-top-7 p-left-5 glyphicon glyphicon-star"></span>
-                                <span class="d-inline-block pl-7 text-service-highlight text-bold">
+                            <a onclick="return false;" href="#" class="nav-sper-title">
+                                <span class="nav-sper-icon-highlight nav-sper-icon glyphicon glyphicon-star"></span>
+                                <span class="nav-sper-text">
                                     Dịch vụ nổi bật
                                 </span>
                             </a>
@@ -88,11 +88,11 @@
                                             %%service.servicename%%
                                         </h4>
                                     </a>
-                                    <address class="service-address mb-1">
+                                    <address class="service-address mb-1 text-address">
                                         %%service.address_identifier.addressname%%
                                     </address>
-                                    <div class="fs-13 clearfix">
-                                        <div class="text-service pull-left">
+                                    <div class="fs-12 clearfix">
+                                        <div class="text-branch pull-left">
                                             <span class="glyphicon glyphicon-map-marker"></span>
                                              2 chi nhánh
                                         </div>
@@ -107,7 +107,7 @@
                                              
                                         </div>
                                         <div class="pull-right">
-                                            <span class="fa fa-bookmark fa-1x"></span>
+                                            <span class="pointer bookmark-scale fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <p class="text-center">
-                        <a class="text-service text-underline" href="/service">
+                        <a class="text-view-more" href="/service">
                             Xem thêm
                         </a>
                     </p>

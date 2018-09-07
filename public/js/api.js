@@ -182,6 +182,14 @@ function getSperApi(sperStorage) {
                     product.namePartner = namePartner;
                     product.key = MD5(product.serviceid + idPartner + namePartner + keyPartner);
                     return sperApi.post(url, product, callback);
+                },
+                comment: {
+                },
+                like: {
+                },
+                share: {
+                },
+                bookmark: {
                 }
             }
         },
@@ -203,6 +211,34 @@ function getSperApi(sperStorage) {
                         data: {blog_id: blog_id},
                         success: callback
                     });                	
+                },
+                comment: {
+                    getList: function(blog, callback) {
+                    },
+                    add: function(comment, callback) {
+                    },
+                    remove: function(comment, callback){
+                    }
+                },
+                like: {
+                    getList: function (blog, callback) {
+                    },
+                    add: function (like, callback) {
+                    },
+                    remove: function (like, callback) {
+                    }
+                },
+                share: {
+                    getList: function (blog, callback) {
+                    },
+                    add: function (share, callback) {
+                    }
+                },
+                bookmark: {
+                    getList: function (blog, callback) {
+                    },
+                    add: function (bookmark, callback) {
+                    }
                 }
             },
             review: {
@@ -213,6 +249,34 @@ function getSperApi(sperStorage) {
                         data: review,
                         success: callback
                     });
+                },
+                comment: {
+                    getList: function (review, callback) {
+                    },
+                    add: function (comment, callback) {
+                    },
+                    remove: function (comment, callback) {
+                    }
+                },
+                like: {
+                    getList: function (review, callback) {
+                    },
+                    add: function (like, callback) {
+                    },
+                    remove: function (like, callback) {
+                    }
+                },
+                share: {
+                    getList: function (review, callback) {
+                    },
+                    add: function (share, callback) {
+                    }
+                },
+                bookmark: {
+                    getList: function (review, callback) {
+                    },
+                    add: function (bookmark, callback) {
+                    }
                 }
             },
             article: {
@@ -230,6 +294,34 @@ function getSperApi(sperStorage) {
                         method: 'get',
                         success: callback
                     });
+                },
+                comment: {
+                    getList: function (article, callback) {
+                    },
+                    add: function (comment, callback) {
+                    },
+                    remove: function (comment, callback) {
+                    }
+                },
+                like: {
+                    getList: function (article, callback) {
+                    },
+                    add: function (like, callback) {
+                    },
+                    remove: function (like, callback) {
+                    }
+                },
+                share: {
+                    getList: function (article, callback) {
+                    },
+                    add: function (share, callback) {
+                    }
+                },
+                bookmark: {
+                    getList: function (article, callback) {
+                    },
+                    add: function (bookmark, callback) {
+                    }
                 }
             }
         }

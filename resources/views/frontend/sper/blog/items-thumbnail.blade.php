@@ -15,7 +15,7 @@
             </div>
             <div class="panel-footer">
                 <div class="clearfix">
-                    <span class="fa fa-bookmark fa-1x"></span>
+                    <span class="bookmark-scale pointer fa fa-bookmark fa-1x" ng-click="bookmark(item)"></span>
                      %%item.blog_likes%% 
                     <span class="far fa-comments fa-1x"></span>
                      %%item.blog_comments%% %%item.blog_views%% views 

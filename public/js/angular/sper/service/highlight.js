@@ -11,16 +11,11 @@ function sper_service_highlight(sperApi, sperStorage, sperMedia) {
             $scope.reloadServices();
         });
 
-        var categoryIntervalId = setInterval(function () {
-            if (sperMedia.categories) {
-                $scope.categories = sperMedia.categories;
-                $scope.selectCategory($scope.categories[0]);
-                $scope.$apply();
-                clearInterval(categoryIntervalId);
-            }
-        }, 10);
-
-
+        sperMedia.listen('categories', function (categories) {
+            $scope.categories = categories;
+            $scope.selectCategory(categories[0]);
+            $scope.$apply();
+        });
 
         $scope.selectCategory = function (category) {
             $scope.selectedCategory = category;

@@ -6,22 +6,15 @@ function sper_video_review(sperApi, sperStorage, sperMedia) {
             $scope.reloadReviews();
         });
 
-        var categoryIntervalId = setInterval(function () {
-            if (sperMedia.categories) {
-                $scope.categories = sperMedia.categories;
-                //$scope.selectCategory($scope.categories[0]);
-                $scope.$apply();
-                clearInterval(categoryIntervalId);
-            }
-        }, 10);
+        sperMedia.listen('categories', function(categories) {
+            $scope.categories = categories;
+            $scope.$apply();
+        });
 
-        var cityIntervalId = setInterval(function () {
-            if (sperMedia.cities) {
-                $scope.cities = sperMedia.cities;
-                $scope.$apply();
-                clearInterval(cityIntervalId);
-            }
-        }, 10);
+        sperMedia.listen('cities', function(cities) {
+            $scope.cities = cities;
+            $scope.$apply();
+        });
 
         $scope.selectCategory = function (category) {
             $scope.selectedCategory = category;

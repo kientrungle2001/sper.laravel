@@ -3,6 +3,10 @@
     
     getLocation(function (loc) {
         var coords = loc.coords;
+        coords = {
+            latitude: 10.746903,
+            longitude: 106.676292
+        };
         sperMedia.setCurrentLocation(coords);
     }, function () {
 
@@ -11,6 +15,33 @@
     var sperMedia = getSperMedia();
 
     var sperApi = getSperApi(sperStorage);
+
+    var cities = sperStorage.getItem('cities');
+
+    if(null === cities) {
+        sperApi.location.getListCities({}, function (resp) {
+            var cities = resp.ResponseData;
+            sperMedia.setCities(cities);
+            sperStorage.setItem('cities', cities);
+        });
+    } else {
+        setTimeout(function() {
+            sperMedia.setCities(cities);
+        }, 500);
+    }
+
+    var categories = sperStorage.getItem('categories');
+    if(null === categories) {
+        sperApi.category.getList({}, function (resp) {
+            var categories = buildCategoryTree(resp.ResponseData.sort(function (a, b) { return a.position - b.position; }));
+            sperMedia.setCategories(categories);
+            sperStorage.setItem('categories', categories);
+        });
+    } else {
+        setTimeout(function () {
+            sperMedia.setCategories(categories);
+        }, 500);
+    }
     
     var sperApp = angular.module('SperApp', ['ngSanitize'], function($interpolateProvider) {
         $interpolateProvider.startSymbol('%%');

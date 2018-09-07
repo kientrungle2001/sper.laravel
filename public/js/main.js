@@ -92,6 +92,16 @@ function getSperMedia() {
             this.cities = cities;
             this.notify('cities', cities);
         },
+        getCities: function() {
+            return this.cities;
+        },
+        setCategories: function (categories) {
+            this.categories = categories;
+            this.notify('categories', categories);
+        },
+        getCategories: function () {
+            return this.categories;
+        },
         notify: function (evt, data) {
             var handlers = this.eventListeners[evt] || [];
             handlers.forEach(function (handler) {

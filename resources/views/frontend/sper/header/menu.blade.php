@@ -1,6 +1,6 @@
 <div class="bg-white">
     <div class="container" ng-controller="Sper.Header">
-        <nav type="default" class="navbar navbar-default bg-white mb-0">
+        <nav type="default" class="navbar navbar-default bg-white mb-0 bd-none">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed btn-default" data-target="#top-menu" data-toggle="collapse" aria-expanded="false">
                     <span class="icon-bar"></span>
@@ -13,28 +13,28 @@
             </div>
             <form align="left" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <select class="input-sm form-control" ng-options="category.categoryid as category.categoryname for category in categories | orderBy: 'position'" ng-model="selectedCategoryId" ng-change="selectCategory()">
+                    <select class="input-sm-new form-control" ng-options="category.categoryid as category.categoryname for category in categories | orderBy: 'position'" ng-model="selectedCategoryId" ng-change="selectCategory()">
                          
                     </select>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <input class="input-sm form-control" style="width:280px" placeholder="Search" />
+                        <input class="input-sm-new form-control" style="width:280px" placeholder="Search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-default btn-xs" style="height: 30px;">
-                                <span class="fs-14 glyphicon glyphicon-search"></span>
+                            <button class="btn btn-default btn-xs" style="height: 34px; width: 34px;background-color: #e6e6e6">
+                                <span class="fs-16 glyphicon glyphicon-search"></span>
                             </button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <select class="input-sm form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCityId" ng-change="selectCity()">
+                    <select class="input-sm-new form-control" ng-options="city.addcityid as city.addcityname for city in cities" ng-model="selectedCityId" ng-change="selectCity()">
                          
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default btn-xs" style="height: 30px;">
-                        <span class="fs-14 glyphicon glyphicon-phone"></span>
+                    <button class="btn btn-default btn-xs" style="height: 34px;">
+                        <span class="fs-16 glyphicon glyphicon-phone"></span>
                          Tải App 
                     </button>
                 </div>
@@ -73,7 +73,7 @@
                         </li>
                         <li>
                             <a href="/clientarea/collection">
-                                <span class="fa fa-bookmark fa-1x"></span>
+                                <span class="bookmark-scale fa fa-bookmark fa-1x"></span>
                                  Bộ sưu tập
                             </a>
                         </li>
@@ -197,6 +197,7 @@
                 <li class="dropdown dropdown-no-close">
                     <a class="dropdown-toggle navbar-link" data-toggle="dropdown" href="#" onclick="return false;">
                         <img style="width: 20px; height: 20px;" src="/images/flag/vn.png" />
+                        <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>

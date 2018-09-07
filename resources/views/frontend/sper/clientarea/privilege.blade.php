@@ -55,7 +55,7 @@
                     </li>
                     <li class="list-group-item">
                         <a href="/clientarea/collection">
-                            <span class="fa fa-bookmark fa-2x"></span>
+                            <span class="bookmark-scale fa fa-bookmark fa-2x"></span>
                              Bộ sưu tập
                         </a>
                     </li>

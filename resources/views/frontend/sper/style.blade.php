@@ -1,6 +1,6 @@
 <style type="text/css">
     * {
-        font-family: Arial;
+        font-family: Arial, Helvetica;
     }
     /* Grid 5*/
     body {background: #eee;}
@@ -87,6 +87,9 @@
     .pr-5-p {padding-right: 5%;}
 
     .mg-0 {margin: 0;}
+    .mg-1 {margin: 5px;}
+    .mg-2 {margin: 10px;}
+    .mg-3 {margin: 15px;}
     .mb-0 {margin-bottom: 0;}
     .mb-1 {margin-bottom: 5px;}
     .mb-2 {margin-bottom: 10px;}
@@ -136,6 +139,10 @@
     .btn-login-social, .login-icon {
         border: none;
         border-radius: 0;
+    }
+
+    .btn-bookmark {
+        background: #00A812 !important;
     }
 
     .login-icon span {
@@ -247,6 +254,38 @@
     }
 
     /* Services */
+
+    .nav-sper-heading {
+        text-transform: uppercase;
+        border: none !important;
+    }
+
+    .nav-sper-heading > li, .nav-sper-heading > li > a {
+        border: none !important;
+        background: none !important;
+        background-color: none !important;
+    }
+
+    .nav-sper-title {
+        position: relative;
+    }
+    .nav-sper-heading .nav-sper-icon
+    {
+        font-size: 25px;
+        position: absolute;
+    }
+    .nav-sper-heading .nav-sper-icon-highlight {
+        top: 7px;
+        color: #00C338 !important;
+    }
+    
+    .nav-sper-heading .nav-sper-text {
+        display: inline-block;
+        padding-left: 35px;
+        font-weight: bold;
+        color: #00ADF5 !important;
+    }
+
     .service-category .glyphicon {
         visibility: hidden;
     }
@@ -259,9 +298,14 @@
         visibility: visible;
     }
 
+    .service-category li:hover, .service-category li:hover a, .service-category .active, .service-category .active a {
+        background: #CBCBCB !important;
+        color: #333;
+    }
+
     /* Service Item */
-    .service-heading h4 {font-size: 13px; margin: 0; padding: 0;font-weight: bold; height: 15px; overflow: hidden;}
-    .service-address {font-size: 11px; height: 15px; overflow: hidden;}
+    .service-heading h4 {font-size: 14px; margin: 0; padding: 0;font-weight: bold; height: 15px; overflow: hidden;}
+    .service-address {font-size: 12px; height: 15px; overflow: hidden;}
 
     .address-search-input {top: 15px; left: 15px; width: 480px; height: 30px; padding: 5px;}
     .address-search-radius {top: 15px; left: 495px; width: 80px; height: 30px; padding: 5px;}
@@ -293,6 +337,15 @@
         color: #00C338 !important;
     }
 
+    .text-title {
+        color: #009900 !important;
+    }
+
+    .text-view-more {
+        color: #006600 !important;
+        text-decoration: underline;
+    }
+
     .text-service-promotion {
         color: red;
     }
@@ -303,6 +356,18 @@
 
     .text-service-highlight {
         color: #00ADF5 !important;
+    }
+
+    .text-branch {
+        color: #0c9f04;
+    }
+
+    .text-address {
+        color: #555;
+    }
+
+    .text-light {
+        color: #555;
     }
 
     .text-bold {
@@ -394,5 +459,35 @@
     .bocongthuong {
         max-width: 100%;
         height: auto;
+    }
+
+    .service-category li {
+        border: none;
+    }
+
+    .bookmark-scale {
+        transform: scale(1, 1.5);
+    }
+
+    /* Border Radius */
+    .br-1 {
+        border-radius: 1px !important;
+    }
+    .br-2 {
+        border-radius: 2px !important;
+    }
+    .br-3 {
+        border-radius: 3px !important;
+    }
+    /* Blog */
+    .blog-heading {
+        border-bottom: 2px solid #009900;
+    }
+    .blog-lastest-heading li a {
+        font-weight: bold;
+        padding: 4px !important;
+    }
+    .blog-lastest-heading .active {
+        border-bottom: 2px solid #FF0000;
     }
 </style>

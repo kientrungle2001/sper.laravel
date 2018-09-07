@@ -2,97 +2,117 @@
     <div class="row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <ul class="service-category list-group">
-                    <li class="heading list-group-item">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-align-justify"></span>
+                <ul class="service-category list-group mt-3">
+                    <li class="heading list-group-item pd-1 pl-5">
+                        <a class="text-service text-bold text-uppercase" href="#">
+                            <span class="fas fa-bars fa-1x"></span>
                              Danh mục
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Địa điểm
                         </a>
                     </li>
-                    <li class="active list-group-item">
+                    <li class="active list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Chủ đề
                         </a>
                     </li>
-                    <li class="hide list-group-item">
+                    <li class="hide list-group-item pd-1 pl-5">
                         <a href="/clientarea/service">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Dịch vụ của bạn
                         </a>
                     </li>
-                    <li class="hide list-group-item">
+                    <li class="hide list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Danh bạ sper
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="/clientarea/collection">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Bộ sưu tập
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Video Review
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Nổi bật
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Khuyến mại
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="/blog">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Blog Sper
                         </a>
                     </li>
-                    <li class="hide list-group-item">
+                    <li class="hide list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Ví Sper
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item pd-1 pl-5">
                         <a href="/news">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Tin tức về Sper
                         </a>
                     </li>
-                    <li class="hide list-group-item">
+                    <li class="hide list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Diễn đàn Sper
                         </a>
                     </li>
-                    <li class="hide list-group-item">
+                    <li class="hide list-group-item pd-1 pl-5">
                         <a href="#">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Tìm việc làm
                         </a>
                     </li>
                 </ul>
+                <hr class="mt-1 mb-1" />
+                <ul class="service-category list-group">
+                    <li class="heading list-group-item pd-1 pl-5">
+                        <a class="text-service text-bold text-uppercase" href="#">
+                            <span class="fas fa-credit-card fa-1x"></span>
+                             Thanh toán
+                        </a>
+                    </li>
+                    <li class="list-group-item pl-5">
+                        <img class="img-responsive" src="/images/payment.png" />
+                    </li>
+                </ul>
+                <hr class="mt-1 mb-1" />
+                <ul class="service-category list-group">
+                    <li class="heading list-group-item pd-1 pl-5">
+                        <a class="text-service text-bold text-uppercase" href="#">
+                            Đối tác của chúng tôi
+                        </a>
+                    </li>
+                    <li class="list-group-item pl-5">
+                        <img class="img-responsive" src="/images/partner.png" />
+                    </li>
+                </ul>
                 <div class="panel-body">
-                    <div>
-                        <h2></h2>
-                    </div>
-                    <img class="img-responsive" src="http://placehold.it/480x900" />
+                     
                 </div>
             </div>
         </div>
@@ -211,7 +231,7 @@
                                              
                                         </div>
                                         <div class="pull-right">
-                                            <span class="pointer fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
+                                            <span class="pointer bookmark-scale fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -353,33 +373,22 @@
                                     </div>
                                 </div>
                                 <div class="panel-body" style="height: 80px; overflow: hidden;">
-                                    <a href="#">
-                                        <small>
-                                            %%item.review_title%%
-                                        </small>
+                                    <a class="text-service-highlight text-justify text-bold" href="#">
+                                        %%item.review_title%%
                                     </a>
-                                    <div class="hide clearfix">
-                                        <div class="pull-left">
-                                            <span class="glyphicon glyphicon-map-marker"></span>
-                                             2 chi nhanh
-                                        </div>
-                                        <div class="pull-right">
-                                            To doi
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="panel-footer">
                                     <div class="clearfix">
-                                        <div class="pull-left">
-                                            <span class="far fa-heart fa-1x"></span>
+                                        <div class="fs-13 pull-left">
+                                            <span class="fs-13 far fa-heart fa-1x"></span>
                                              %%item.review_likes%% 
-                                            <span class="far fa-comments fa-1x"></span>
+                                            <span class="fs-13 far fa-comments fa-1x"></span>
                                              %%item.review_comments%% 
-                                            <span class="fas fa-share-alt fa-1x"></span>
+                                            <span class="fs-13 fas fa-share-alt fa-1x"></span>
                                              %%item.review_shares%% 
                                         </div>
                                         <div class="pull-right">
-                                            <span class="pointer fa fa-bookmark fa-1x" ng-click="bookmark(item)"></span>
+                                            <span class="pointer bookmark-scale fa fa-bookmark fa-1x" ng-click="bookmark(item)"></span>
                                         </div>
                                     </div>
                                 </div>

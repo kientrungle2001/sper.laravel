@@ -1,9 +1,9 @@
 function sper_header(sperApi, sperStorage, sperMedia) {
     return function ($scope) {
+
         $scope.user = sperStorage.getItem('user');
-        sperApi.location.getListCities({}, function (resp) {
-            $scope.cities = resp.ResponseData;
-            sperMedia.cities = $scope.cities;
+        sperMedia.listen('cities', function(cities) {
+            $scope.cities = cities;
             $scope.loadSelectedCity();
             $scope.$apply();
         });
@@ -38,10 +38,8 @@ function sper_header(sperApi, sperStorage, sperMedia) {
             return selectedCity;
         };
 
-
-        sperApi.category.getList({}, function (resp) {
-            $scope.categories = buildCategoryTree(resp.ResponseData.sort(function (a, b) { return a.position - b.position; }));
-            sperMedia.categories = $scope.categories;
+        sperMedia.listen('categories', function (categories) {
+            $scope.categories = categories;
             $scope.loadSelectedCategory();
             $scope.$apply();
         });

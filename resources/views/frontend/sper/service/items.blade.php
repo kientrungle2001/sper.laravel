@@ -12,11 +12,11 @@
                         %%service.servicename%%
                     </h4>
                 </a>
-                <address class="service-address mb-1">
+                <address class="service-address mb-1 text-address">
                     %%service.address_identifier.addressname%%
                 </address>
-                <div class="fs-13 clearfix">
-                    <div class="text-service pull-left">
+                <div class="fs-12 clearfix">
+                    <div class="text-branch pull-left">
                         <span class="glyphicon glyphicon-map-marker"></span>
                          2 chi nhánh
                     </div>
@@ -31,7 +31,7 @@
                          
                     </div>
                     <div class="pull-right">
-                        <span class="fa fa-bookmark fa-1x"></span>
+                        <span class="pointer bookmark-scale fa fa-bookmark fa-1x" ng-click="bookmark(service)"></span>
                     </div>
                 </div>
             </div>
