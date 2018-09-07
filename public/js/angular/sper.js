@@ -17,16 +17,31 @@
     var sperApi = getSperApi(sperStorage);
 
     var cities = sperStorage.getItem('cities');
-
+    var districts = sperStorage.getItem('districts');
+    console.log(cities);
     if(null === cities) {
         sperApi.location.getListCities({}, function (resp) {
             var cities = resp.ResponseData;
+            var districts = {};
+            cities.forEach(function(city) {
+                sperApi.location.getDistricts({
+                    cityid: city.addcityid,
+                    async: false
+                }, function(districtResp) {
+                    console.log(districtResp);
+                    districts[city.addcityid] = districtResp.ResponseData;
+                    city.districts = districtResp.ResponseData;
+                });
+            });
+            sperMedia.setDistricts(districts);
             sperMedia.setCities(cities);
             sperStorage.setItem('cities', cities);
+            sperStorage.setItem('districts', districts);
         });
     } else {
         setTimeout(function() {
             sperMedia.setCities(cities);
+            sperMedia.setDistricts(districts);
         }, 500);
     }
 

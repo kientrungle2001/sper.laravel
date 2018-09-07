@@ -120,7 +120,7 @@
             </div>
         </div>
         <p class="text-center">
-            <a class="text-service text-underline" href="/service">
+            <a class="text-view-more" href="/service">
                 Xem thêm
             </a>
         </p>

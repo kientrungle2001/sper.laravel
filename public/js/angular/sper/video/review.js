@@ -68,5 +68,33 @@ function sper_video_review(sperApi, sperStorage, sperMedia) {
         };
 
         $scope.reloadReviews();
+        $scope.selectedDistrictIds = {};
+        $scope.selectedDistricts = {};
+        $scope.selectDistrict = function(district) {
+            if ($scope.selectedDistrictIds[district.addmunicipalityid]) {
+                $scope.selectedDistricts[district.addmunicipalityid] = district;
+            } else {
+                delete $scope.selectedDistricts[district.addmunicipalityid];
+            }
+            console.log($scope.selectedDistricts);
+        };
+        $scope.selectedCityIds = {};
+        $scope.selectedCities = {};
+        $scope.selectCity = function(city) {
+            if ($scope.selectedCityIds[city.addcityid]) {
+                $scope.selectedCities[city.addcityid] = city;
+                city.districts.forEach(function(district) {
+                    $scope.selectedDistrictIds[district.addmunicipalityid] = true;
+                    $scope.selectDistrict(district);
+                });
+            } else {
+                delete $scope.selectedCities[city.addcityid];
+                city.districts.forEach(function (district) {
+                    $scope.selectedDistrictIds[district.addmunicipalityid] = false;
+                    $scope.selectDistrict(district);
+                });
+            }
+            console.log($scope.selectedCities);
+        };
     };
 }

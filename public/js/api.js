@@ -28,7 +28,7 @@ function getSperApi(sperStorage) {
                 url: '/sper_api.php',
                 type: 'post',
                 dataType: 'json',
-                async: data.async ? data.async : true,
+                async: (typeof data.async !== 'undefined') ? data.async : true,
                 data: {
                     url: url,
                     data: data,
@@ -63,6 +63,14 @@ function getSperApi(sperStorage) {
                 params.idPartner = idPartner;
                 params.namePartner = namePartner;
                 params.key = MD5(idPartner + namePartner + keyPartner);
+                sperApi.get(url, params, callback);
+            },
+            getDistricts: function(params, callback) {
+                var url = 'http://test.sper.com.vn/api/business/GetDistricts';
+                params.token = token;
+                params.idPartner = idPartner;
+                params.namePartner = namePartner;
+                params.key = MD5(''+params.cityid + idPartner + namePartner + keyPartner);
                 sperApi.get(url, params, callback);
             }
         },

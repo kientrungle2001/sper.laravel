@@ -10,7 +10,7 @@
             </div>
             <div class="panel-body">
                 <a href="/news/detail?article_id=%%item.id%%">
-                    <small style="height: 30px; overflow: hidden; display: block; text-align: justify;">
+                    <small class="fs-12" style="height: 30px; overflow: hidden; display: block; text-align: justify;">
                         %%item.article_title%%
                     </small>
                 </a>
@@ -21,10 +21,10 @@
                         <img class="img-circle media-object" src="http://placehold.it/36x36" />
                     </div>
                     <div class="media-body">
-                        <strong>
+                        <strong class="fs-12">
                             Thu Phuong
                         </strong>
-                        <small>
+                        <small class="fs-12">
                             %%item.created_at%%
                         </small>
                     </div>

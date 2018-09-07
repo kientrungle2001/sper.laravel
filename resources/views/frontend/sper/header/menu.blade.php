@@ -181,13 +181,23 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li style="width: 250px;">
-                            <div class="media">
+                            <div class="media bb-1">
                                 <div class="media-left pd-3">
                                     <span class="far fa-star fa-2x"></span>
                                 </div>
                                 <div class="media-body">
                                     <a style="white-space: normal;line-height: 25px;" href="#">
                                          Viết blog chia sẻ trải nghiệm cho cộng đồng
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left pd-3">
+                                    <span class="fab fa-youtube fa-2x"></span>
+                                </div>
+                                <div class="media-body">
+                                    <a style="white-space: normal;line-height: 25px;" href="#">
+                                         Tạo Video Review
                                     </a>
                                 </div>
                             </div>

@@ -95,6 +95,12 @@ function getSperMedia() {
         getCities: function() {
             return this.cities;
         },
+        setDistricts: function (districts) {
+            this.districts = districts;
+        },
+        getDistricts: function () {
+            return this.districts;
+        },
         setCategories: function (categories) {
             this.categories = categories;
             this.notify('categories', categories);

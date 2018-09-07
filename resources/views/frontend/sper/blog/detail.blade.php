@@ -21,28 +21,28 @@
                                 <div class="col-md-9">
                                     <div class="media">
                                         <div class="media-left">
-                                            <img class="img-circle media-object" src="http://placehold.it/48x48" />
+                                            <img class="img-circle media-object" src="http://placehold.it/32x32" />
                                         </div>
                                         <div class="media-body">
-                                            <h4 class="media-heading">
+                                            <h4 class="fs-14 text-bold mg-0 media-heading">
                                                  Khanh Huyen 
                                             </h4>
-                                            <small>
+                                            <small class="fs-12 text-light">
                                                 %%blog.created_at%%
                                             </small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-right col-md-3">
-                                    <button class="btn btn-success" ng-click="bookmark(blog)">
-                                        <span class="fa fa-bookmark fa-1x"></span>
+                                    <button class="btn-bookmark btn btn-success" ng-click="bookmark(blog)">
+                                        <span class="bookmark-scale fa fa-bookmark fa-1x"></span>
                                          Lưu bài viết
                                     </button>
                                 </div>
                             </div>
                         </li>
                         <li class="list-group-item bd-none bb-2">
-                            <h1>
+                            <h1 class="fs-18 text-bold mg-1">
                                 %%blog.blog_title%%
                             </h1>
                             <div class="embed-responsive embed-responsive-16by9">
@@ -55,7 +55,7 @@
                         <li class="list-group-item bd-none bb-2">
                             <div class="clearfix">
                                 <div class="pull-left">
-                                     Like | Share 
+                                    <div class="fb-like" data-href="https://sper.vn/blog/detail?blog_id=%%blog.id%%" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
                                 </div>
                                 <div class="pull-right">
                                      Đánh giá 
@@ -72,11 +72,11 @@
                                 </div>
                             </div>
                             <div class="clearfix">
-                                 Bình luận 
+                                <div class="fb-comments" data-href="https://sper.vn/blog/detail?blog_id=%%blog.id%%" data-numposts="5"></div>
                             </div>
                         </li>
                         <li class="list-group-item bd-none" ng-controller="Sper.Blog.Others">
-                            <h2>
+                            <h2 class="fs-18 text-bold mg-1">
                                 Bài viết khác
                             </h2>
                             <div class="row-pd-5 row">
@@ -88,9 +88,11 @@
                                             </div>
                                         </div>
                                         <div class="panel-body">
-                                            <small class="d-block" style="height: 35px; overflow:hidden;text-align: justify;">
-                                                %%item.blog_title%%
-                                            </small>
+                                            <a href="/blog/detail?blog_id=%%item.id%%">
+                                                <small class="d-block fs-12" style="height: 35px; overflow:hidden;text-align: justify;">
+                                                    %%item.blog_title%%
+                                                </small>
+                                            </a>
                                         </div>
                                         <div class="panel-footer">
                                             <div class="media">
@@ -98,10 +100,10 @@
                                                     <img class="img-circle media-object" src="http://placehold.it/36x36" />
                                                 </div>
                                                 <div class="media-body">
-                                                    <strong>
+                                                    <strong class="fs-12">
                                                         Thu Phuong
                                                     </strong>
-                                                    <small>
+                                                    <small class="fs-12 text-light">
                                                         %%item.created_at%%
                                                     </small>
                                                 </div>
