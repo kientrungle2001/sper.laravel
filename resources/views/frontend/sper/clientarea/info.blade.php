@@ -11,20 +11,49 @@
     </ol>
 </div>
 <div class="container" ng-controller="Sper.ClientArea.Info">
+    <div tabindex="-1" role="dialog" class="modal fade" id="previewModal">
+        <div role="document" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Xem trước
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" id="previewImg" />
+                    <input type="hidden" id="base64Img" />
+                </div>
+                <div class="modal-footer">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <button class="btn btn-success" ng-click="updateInfoImage()" data-dismiss="modal">
+                                Cập nhật
+                            </button>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                Đóng lại
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <div class="panel-heading pd-0">
+                <div class="panel-heading pd-0" ng-controller="Sper.ClientArea.User">
                     <div class="thumbnail mg-0">
-                        <img class="img-circle img-responsive" src="http://placehold.it/64x64" />
+                        <a href="/clientarea/info">
+                            <img class="img-circle img-responsive" style="width: 64px; height: auto;" src="%% user.avatar || 'http://placehold.it/64x64' %%" />
+                        </a>
                         <div class="text-center caption">
-                             Đinh Nhật Nam
+                            <a href="/clientarea/info">
+                                %%user.fullname%%
+                            </a>
                             <br />
-                             
                             <small>
-                                dinhnhatnam@gmail.com
+                                %%user.email%%
                             </small>
-                             
                         </div>
                     </div>
                 </div>
@@ -109,12 +138,12 @@
                                 Ảnh đại diện
                             </label>
                             <div class="col-md-9">
-                                <img class="img-circle" id="userAvatar" src="%% user.avatar || 'http://placehold.it/64x64'%%" />
+                                <img class="img-circle" style="width: 64px; height: auto;" id="userAvatar" src="%% user.avatar || 'http://placehold.it/64x64'%%" />
                                 <div class="mt-3">
-                                    <button class="btn btn-primary" onclick="jQuery('#avatarSelector').click();">
+                                    <button class="btn btn-primary" onclick="jQuery('#avatarSelector').click(); return false;">
                                         Đổi ảnh đại diện
                                     </button>
-                                    <input class="hide" type="file" id="avatarSelector" onchange="handleUploadInfo(event)" />
+                                    <input class="hide" type="file" id="avatarSelector" onchange="handleServiceUpload(event)" />
                                 </div>
                             </div>
                         </div>

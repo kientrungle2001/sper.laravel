@@ -2,11 +2,11 @@
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
-             Tai khoan 
+             Bộ sưu tập 
         </li>
     </ol>
 </div>
@@ -14,17 +14,19 @@
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <div class="panel-heading pd-0">
+                <div class="panel-heading pd-0" ng-controller="Sper.ClientArea.User">
                     <div class="thumbnail mg-0">
-                        <img class="img-circle img-responsive" src="http://placehold.it/64x64" />
+                        <a href="/clientarea/info">
+                            <img class="img-circle img-responsive" style="width: 64px; height: auto;" src="%% user.avatar || 'http://placehold.it/64x64' %%" />
+                        </a>
                         <div class="text-center caption">
-                             Đinh Nhật Nam
+                            <a href="/clientarea/info">
+                                %%user.fullname%%
+                            </a>
                             <br />
-                             
                             <small>
-                                dinhnhatnam@gmail.com
+                                %%user.email%%
                             </small>
-                             
                         </div>
                     </div>
                 </div>

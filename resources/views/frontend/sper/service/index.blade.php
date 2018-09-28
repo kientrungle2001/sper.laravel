@@ -2,21 +2,21 @@
     <div class="row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <ul class="service-category list-group mt-3">
+                <ul class="service-category list-group mt-3" ng-controller="Sper.Service.Category">
                     <li class="heading list-group-item pd-1 pl-5">
                         <a class="text-service text-bold text-uppercase" href="#">
                             <span class="fas fa-bars fa-1x"></span>
                              Danh mục
                         </a>
                     </li>
-                    <li class="list-group-item pd-1 pl-5">
-                        <a href="#">
+                    <li class="list-group-item pd-1 pl-5" ng-class="{'active': selectedTab == 'places'}">
+                        <a href="#" onclick="return false;" ng-click="selectCategoryTab('places')">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Địa điểm
                         </a>
                     </li>
-                    <li class="active list-group-item pd-1 pl-5">
-                        <a href="#">
+                    <li class="list-group-item pd-1 pl-5" ng-class="{'active': selectedTab == 'categories'}">
+                        <a href="#" onclick="return false;" ng-click="selectCategoryTab('categories')">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Chủ đề
                         </a>
@@ -40,19 +40,19 @@
                         </a>
                     </li>
                     <li class="list-group-item pd-1 pl-5">
-                        <a href="#">
+                        <a href="#video-review">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Video Review
                         </a>
                     </li>
-                    <li class="list-group-item pd-1 pl-5">
-                        <a href="#">
+                    <li class="list-group-item pd-1 pl-5" ng-class="{'active': selectedTab == 'featured'}">
+                        <a href="#" onclick="return false;" ng-click="selectCategoryTab('featured')">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Nổi bật
                         </a>
                     </li>
-                    <li class="list-group-item pd-1 pl-5">
-                        <a href="#">
+                    <li class="list-group-item pd-1 pl-5" ng-class="{'active': selectedTab == 'promotion'}">
+                        <a href="#" onclick="return false;" ng-click="selectCategoryTab('promotion')">
                             <span class="glyphicon glyphicon-align-justify"></span>
                              Khuyến mại
                         </a>
@@ -168,7 +168,7 @@
                             <div class="panel panel-default mb-2">
                                 <div class="panel-heading pd-0">
                                     <div class="embed-responsive embed-responsive-4by3" style="overflow:hidden;">
-                                        <img class="img-responsive" ng-src="%%service.serviceimg%%" />
+                                        <img class="img-responsive" ng-src="%%service.serviceimg|thumb:400:300%%" />
                                     </div>
                                 </div>
                                 <div class="panel-body">

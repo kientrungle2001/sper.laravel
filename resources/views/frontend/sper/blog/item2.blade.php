@@ -1,7 +1,7 @@
 <li class="media bb-1 pb-3" ng-repeat="blog in items">
     <div class="media-left">
         <div class="embed-responsive embed-responsive-16by9">
-            <img class="media-object" style="max-width: 125px;" src="%%blog.blog_img%%" />
+            <img class="media-object" style="max-width: 125px;" src="%%blog.blog_img|thumb:480:270%%" />
         </div>
     </div>
     <div class="media-body">

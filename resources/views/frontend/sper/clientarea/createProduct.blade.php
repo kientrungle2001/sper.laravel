@@ -14,17 +14,19 @@
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <div class="panel-heading pd-0">
+                <div class="panel-heading pd-0" ng-controller="Sper.ClientArea.User">
                     <div class="thumbnail mg-0">
-                        <img class="img-circle img-responsive" src="http://placehold.it/64x64" />
+                        <a href="/clientarea/info">
+                            <img class="img-circle img-responsive" style="width: 64px; height: auto;" src="%% user.avatar || 'http://placehold.it/64x64' %%" />
+                        </a>
                         <div class="text-center caption">
-                             Đinh Nhật Nam
+                            <a href="/clientarea/info">
+                                %%user.fullname%%
+                            </a>
                             <br />
-                             
                             <small>
-                                dinhnhatnam@gmail.com
+                                %%user.email%%
                             </small>
-                             
                         </div>
                     </div>
                 </div>
@@ -105,12 +107,12 @@
                 <div class="panel-body">
                     <form ng-submit="create()">
                         <div class="form-group">
-                            <img class="img-responsive" src="http://placehold.it/1366x300" />
-                        </div>
-                        <div class="form-group">
-                            <h2>
-                                Đăng sản phẩm
-                            </h2>
+                            <div class="relative" style="height: 200px; overflow: hidden;">
+                                <h2 class="text-white text-center absolute w-100-p" style="bottom:15px; z-index: 1">
+                                    %%service.servicename%%
+                                </h2>
+                                <img class="img-responsive" src="%% service.serviceimg || 'http://placehold.it/1366x300'%%" />
+                            </div>
                         </div>
                         <div class="form-group">
                             <input class="form-control" placeholder="Nhập tên sản phẩm" ng-model="prodcode" value="Samsung J7 Pro" />
@@ -122,8 +124,8 @@
                             <input class="form-control" placeholder="Đơn vị" ng-model="unit" value="chiếc" />
                         </div>
                         <div class="form-group">
-                            <select class="form-control" placeholder="Chọn lĩnh vực" ng-model="categoryid">
-                                <option value="1">
+                            <select class="form-control" placeholder="Chọn lĩnh vực" ng-model="categoryid" ng-options="subCategory.categoryid as subCategory.categoryname for subCategory in category.children">
+                                <option>
                                     Chọn lĩnh vực
                                 </option>
                             </select>
@@ -135,9 +137,9 @@
                             <button class="btn btn-success">
                                 Hoàn thành
                             </button>
-                            <button class="btn btn-default">
-                                Chỉnh sửa
-                            </button>
+                            <a class="btn btn-default" href="/clientarea/service">
+                                Trở về
+                            </a>
                         </div>
                     </form>
                 </div>

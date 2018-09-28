@@ -3,13 +3,18 @@
         <div class="panel panel-default mb-2">
             <div class="panel-heading pd-0">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <img class="img-responsive" src="%%item.review_img%%" />
+                    <img class="img-responsive" src="%%item.review_img|thumb:480:270%%" />
                 </div>
             </div>
-            <div class="panel-body" style="height: 80px; overflow: hidden;">
-                <a class="text-service-highlight text-justify text-bold" href="#">
+            <div class="panel-body">
+                <a class="text-justify text-bold d-block fs-14" style="height: 18px; overflow: hidden;" href="/video/detail?videoid=%%item.id%%">
                     %%item.review_title%%
                 </a>
+                <div class="clearfix">
+                    <small class="text-light">
+                        %%item.created_at%%
+                    </small>
+                </div>
             </div>
             <div class="panel-footer">
                 <div class="clearfix">

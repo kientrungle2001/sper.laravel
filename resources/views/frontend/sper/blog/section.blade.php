@@ -4,9 +4,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading pd-0">
                     <h2 class="blog-heading fs-18  mg-0 pd-3">
-                        <span class="text-title">
-                            Blog &gt;
-                        </span>
+                        <a href="/blog">
+                            <span class="text-title">
+                                Blog &gt;
+                            </span>
+                        </a>
                         <small class="fs-14 text-light">
                             Lựa chọn ngôi nhà ngoại ô cho gia đình trẻ
                         </small>
@@ -69,7 +71,7 @@
                         <li class="media bb-1 pb-3" ng-repeat="blog in items">
                             <div class="media-left">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <img class="media-object" style="max-width: 125px;" src="%%blog.blog_img%%" />
+                                    <img class="media-object" style="max-width: 125px;" src="%%blog.blog_img|thumb:480:270%%" />
                                 </div>
                             </div>
                             <div class="media-body">

@@ -182,6 +182,7 @@ function getSperApi(sperStorage) {
                     product.idPartner = idPartner;
                     product.namePartner = namePartner;
                     product.key = MD5(product.serviceid + idPartner + namePartner + keyPartner);
+                    product.token = token;
                     return sperApi.get(url, product, callback);
                 },
                 add: function(product, callback) {
@@ -189,6 +190,25 @@ function getSperApi(sperStorage) {
                     product.idPartner = idPartner;
                     product.namePartner = namePartner;
                     product.key = MD5(product.serviceid + idPartner + namePartner + keyPartner);
+                    return sperApi.post(url, product, callback);
+                },
+                get: function(product, callback) {
+                    var url = 'http://test.sper.com.vn/api/business/GetProduct';
+                    product.idPartner = idPartner;
+                    product.namePartner = namePartner;
+                    product.key = MD5(product.prodid + idPartner + namePartner + keyPartner);
+                    product.token = token;
+                    return sperApi.get(url, product, callback);
+                },
+                delete: function(product, callback) {
+                    product.deleted = true;
+                    this.update(product, callback);
+                },
+                update: function(product, callback) {
+                    var url = 'http://test.sper.com.vn/api/business/UpdateProduct';
+                    product.idPartner = idPartner;
+                    product.namePartner = namePartner;
+                    product.key = MD5(product.prodid + idPartner + namePartner + keyPartner);
                     return sperApi.post(url, product, callback);
                 },
                 comment: {

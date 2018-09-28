@@ -23,6 +23,7 @@
 		<link href='/3rdparty/bootstrap3/css/bootstrap.min.css' type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="/3rdparty/tinymce/tinymce.min.js"></script>
 		<link type="text/css" property="stylesheet" rel="stylesheet" href="/3rdparty/fontawesome-5.3.1/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
 
 		<script type="text/javascript">
 			BASE_URL = 'http://<?php echo $_SERVER['HTTP_HOST']?>';
@@ -37,12 +38,16 @@
 		<script type="text/javascript" src="/js/angular/sper/header.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/service/highlight.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/service/section.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/detail.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/detail/product/list.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/product/detail.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/video/review.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/banner/top.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/banner/slideshow.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/account/login.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/account/register.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/service/map.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/service/category.js"></script>
 		
 		<script type="text/javascript" src="/js/angular/sper/blog/section.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/blog/detail.js"></script>
@@ -60,12 +65,15 @@
 		<script type="text/javascript" src="/js/angular/sper/clientarea/changepassword.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/collection.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/createservice.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/editservice.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/createproduct.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/editproduct.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/feedback.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/info.js"></script>
+		<script type="text/javascript" src="/js/angular/sper/clientarea/user.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/privilege.js"></script>
 		<script type="text/javascript" src="/js/angular/sper/clientarea/service.js"></script>
-
+		<script type="text/javascript" src="/js/angular/sper/checkout/cart.js"></script>
 		<script type="text/javascript" src="/js/angular/sper.js"></script>
 		@include('frontend.sper.style')
 

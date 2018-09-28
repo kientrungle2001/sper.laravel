@@ -13,13 +13,21 @@ function sper_clientarea_info(sperApi, sperStorage, sperMedia) {
                 "datebirth": $scope.user.datebirth,
                 "address_identifier": $scope.user.address_identifier,
                 "deleted": false,
-                "status": 1
+                "status": 1,
+                "avatar": $scope.user.avatar.indexOf('base64') === -1 ? $scope.user.avatar : $scope.user.avatar.split(',')[1]
             }, function(resp) {
+                console.log(resp);
                 if(resp.ResponseStatus.Status) {
+                    user.avatar = resp.ResponseData.avatar;
                     sperStorage.setItem('user', user);
                     window.location.reload();
                 }
             });
+        };
+
+        $scope.updateInfoImage = function() {
+            console.log('updateInfoImage');
+            $scope.user.avatar = jQuery('#base64Img').val();
         };
     }
 }

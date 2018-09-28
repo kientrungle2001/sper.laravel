@@ -45,7 +45,7 @@
                             <a href="/news/detail?article_id=%%articles[0].id%%">
                                 <div class="relative">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[0].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[0].article_img | thumb:573:547 %%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">
@@ -58,7 +58,7 @@
                             <a href="/news/detail?article_id=%%articles[1].id%%">
                                 <div class="relative">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[1].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[1].article_img | thumb:480:270 %%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">
@@ -69,7 +69,7 @@
                             <a href="/news/detail?article_id=%%articles[5].id%%">
                                 <div class="relative mt-1">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[5].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[5].article_img | thumb:480:270 %%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">
@@ -84,7 +84,7 @@
                             <a href="/news/detail?article_id=%%articles[2].id%%">
                                 <div class="relative">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[2].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[2].article_img | thumb:480:270 %%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">
@@ -97,7 +97,7 @@
                             <a href="/news/detail?article_id=%%articles[3].id%%">
                                 <div class="relative">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[3].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[3].article_img | thumb:480:270 %%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">
@@ -110,7 +110,7 @@
                             <a href="/news/detail?article_id=%%articles[4].id%%">
                                 <div class="relative">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <img class="img-responsive" src="%%articles[4].article_img%%" />
+                                        <img class="img-responsive" src="%%articles[4].article_img | thumb:480:270%%" />
                                     </div>
                                     <div class="absolute" style="bottom: 0; left: 0; background: #000; opacity: 0.8; width: 100%; height: 60px; z-index: 1;"></div>
                                     <div class="absolute pd-2 fs-14 text-white" style="bottom: 0; left: 0; background: transparent; width: 100%; height: 60px; z-index: 2;">

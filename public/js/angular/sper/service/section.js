@@ -1,6 +1,8 @@
 function sper_service_section(sperApi, sperStorage, sperMedia) {
     return function ($scope) {
-
+        sperMedia.listen('select_category_tab', function(tab) {
+            $scope.selectedTab = tab;
+        });
         $scope.currentLocation = sperMedia.getCurrentLocation();
         sperMedia.listen('location', function (coords) {
             $scope.currentLocation = coords;

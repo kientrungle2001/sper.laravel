@@ -27,12 +27,24 @@ class ClientareaController extends Controller
         return view('frontend.clientarea.collection');
     }
 
+    public function history(Request $request) {
+        return view('frontend.clientarea.history');
+    }
+
     public function createservice(Request $request) {
         return view('frontend.clientarea.createservice');
     }
 
+    public function editservice(Request $request) {
+        return view('frontend.clientarea.editservice');
+    }
+
     public function createproduct(Request $request) {
         return view('frontend.clientarea.createproduct');
+    }
+
+    public function editproduct(Request $request) {
+        return view('frontend.clientarea.editproduct');
     }
 
     public function feedback(Request $request) {

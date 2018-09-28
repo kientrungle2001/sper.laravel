@@ -1,95 +1,108 @@
-<div class="container">
+<div class="container mt-3 mb-3">
     <ol class="breadcrumb">
         <li>
             <a href="/">
-                Trang chu
+                Trang chủ
             </a>
         </li>
         <li class="active">
-             Gio hang 
+             Giỏ hàng 
         </li>
     </ol>
     <div class="text-center">
         <h1>
-            Gio hang cua ban
+            Giỏ hàng của bạn
         </h1>
     </div>
-    <section id="shopping-cart-section">
+    <section id="shopping-cart-section" ng-controller="Sper.Checkout.Cart">
         <table class="table table-hovered">
             <tr>
                 <th>
-                    San pham
+                    Sản phẩm
                 </th>
                 <th>
-                    So luong
+                    Số lượng
                 </th>
                 <th>
-                    Don vi
+                    Đơn vị
                 </th>
                 <th>
-                    Don gia
+                    Đơn giá
                 </th>
                 <th>
-                    Thanh tien
+                    Thành tiền
                 </th>
                 <th>
-                    Xoa
+                    Xóa
                 </th>
             </tr>
-            <tr>
+            <tr ng-repeat="item in cart_items">
                 <td style="width: 350px;">
                     <div class="media">
                         <div class="media-left">
-                            <img class="media-object" src="http://placehold.it/120x90" />
+                            <div style="width: 160px;">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <img class="media-object" src="%%getImage(item.product).path | thumb:640:360%%" />
+                                </div>
+                            </div>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                 San tran thach cao 
+                                <div class="text-bold fs-16">
+                                    <a href="/service/detail?serviceid=%%item.service.serviceid%%">
+                                        %%item.service.servicename%%
+                                    </a>
+                                </div>
+                                <div class="fs-14">
+                                    <a href="/service/product?serviceid=%%item.service.serviceid%%&prodid=%%item.product.prodid%%">
+                                        %%item.product.prodcode%%
+                                    </a>
+                                </div>
                             </h4>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <span class="pointer">
+                    <span class="pointer" ng-click="decreaseQuantity(item)">
                          - 
                     </span>
-                    1
-                    <span class="pointer">
+                    %%item.quantity%%
+                    <span class="pointer" ng-click="increaseQuantity(item)">
                          + 
                     </span>
                 </td>
                 <td>
-                    Tam
+                    %%getPrice(item.product).unit%%
                 </td>
                 <td>
-                    300.000
+                    %%getPrice(item.product).price | toCurrency%%đ
                 </td>
                 <td>
-                    300.000
+                    %%getPrice(item.product).price * item.quantity | toCurrency%%đ
                 </td>
                 <td>
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <span class="pointer glyphicon glyphicon-trash" ng-click="remove($index)"></span>
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
+                <td>
+                    Tổng tiền
+                </td>
+                <td>
+                    %%calculateTotal() | toCurrency%%đ
+                </td>
                 <td></td>
-                <td>
-                    Tong tien
-                </td>
-                <td>
-                    600.000d
-                </td>
             </tr>
         </table>
         <div class="text-center">
             <button class="btn-cart-page btn btn-default">
-                Tro lai trang truoc
+                Trở lại trang trước
             </button>
             <button class="btn-cart-page btn btn-success">
-                Thanh toan
+                Thanh toán
             </button>
         </div>
     </section>

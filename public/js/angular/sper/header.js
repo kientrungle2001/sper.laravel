@@ -78,5 +78,9 @@ function sper_header(sperApi, sperStorage, sperMedia) {
             sperStorage.removeItem('user');
             window.location.reload();
         };
+
+        $scope.selectTab = function(tab) {
+            $scope.selectedTab = tab;
+        };
     };
 }

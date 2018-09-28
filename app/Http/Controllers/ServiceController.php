@@ -19,4 +19,12 @@ class ServiceController extends Controller
     public function realty(Request $request, Response $response) {
         return view('frontend.service.index-by-realty');
     }
+
+    public function detail(Request $request, Response $response) {
+        return view('frontend.service.detail');
+    }
+
+    public function product(Request $request, Response $response) {
+        return view('frontend.service.product');
+    }
 }

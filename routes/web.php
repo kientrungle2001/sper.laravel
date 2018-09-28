@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 Route::get('/service', 'ServiceController@index');
 Route::get('/service/type', 'ServiceController@type');
 Route::get('/service/realty', 'ServiceController@realty');
+Route::get('/service/detail', 'ServiceController@detail');
+Route::get('/service/product', 'ServiceController@product');
 
 Route::get('/cart', 'CartController@index');
 
@@ -23,6 +25,9 @@ Route::get('/introduction', 'StaticController@introduction');
 
 Route::get('/news', 'NewsController@index');
 Route::get('/news/detail', 'NewsController@detail');
+
+Route::get('/video', 'VideoController@index');
+Route::get('/video/detail', 'VideoController@detail');
 
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/detail', 'BlogController@detail');
@@ -32,8 +37,11 @@ Route::get('/clientarea/branchmanagement', 'ClientareaController@branchmanagemen
 Route::get('/clientarea/branchservice', 'ClientareaController@branchservice');
 Route::get('/clientarea/changepassword', 'ClientareaController@changepassword');
 Route::get('/clientarea/collection', 'ClientareaController@collection');
+Route::get('/clientarea/history', 'ClientareaController@history');
 Route::get('/clientarea/createservice', 'ClientareaController@createservice');
+Route::get('/clientarea/editservice', 'ClientareaController@editservice');
 Route::get('/clientarea/createproduct', 'ClientareaController@createproduct');
+Route::get('/clientarea/editproduct', 'ClientareaController@editproduct');
 Route::get('/clientarea/feedback', 'ClientareaController@feedback');
 Route::get('/clientarea/privilege', 'ClientareaController@privilege');
 Route::get('/clientarea/service', 'ClientareaController@service');

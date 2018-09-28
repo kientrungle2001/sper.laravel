@@ -1,7 +1,11 @@
-<div class="col-sm-6 col-md-4" ng-repeat="product in products">
+<div class="col-sm-6 col-md-4" ng-repeat="product in products | filter: {deleted: false}">
     <div class="panel panel-default mb-3">
         <div class="panel-heading pd-0">
-            <img class="img-responsive" src="http://placehold.it/480x360" />
+            <a href="/clientarea/product?prodid=%%product.prodid%%">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="img-responsive" src="%%product.prodimg || 'http://placehold.it/480x360'%%" />
+                </div>
+            </a>
         </div>
         <div class="panel-body">
             <a href="/clientarea/product?prodid=%%product.prodid%%">
@@ -28,9 +32,17 @@
                 </div>
             </div>
             <div class="clearfix">
-                <a href="/clientarea/product?prodid=%%product.prodid%%">
-                    Xem chi tiết
-                </a>
+                <div class="pull-left">
+                    <a href="/clientarea/product?prodid=%%product.prodid%%">
+                        Xem chi tiết
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a href="/clientarea/editproduct?prodid=%%product.prodid%%">
+                        <span class="glyphicon glyphicon-edit"></span>
+                         Sửa
+                    </a>
+                </div>
             </div>
         </div>
     </div>

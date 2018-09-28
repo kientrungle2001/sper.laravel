@@ -14,17 +14,19 @@
     <div class="row-pd-5 row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <div class="panel-heading pd-0">
+                <div class="panel-heading pd-0" ng-controller="Sper.ClientArea.User">
                     <div class="thumbnail mg-0">
-                        <img class="img-circle img-responsive" src="http://placehold.it/64x64" />
+                        <a href="/clientarea/info">
+                            <img class="img-circle img-responsive" style="width: 64px; height: auto;" src="%% user.avatar || 'http://placehold.it/64x64' %%" />
+                        </a>
                         <div class="text-center caption">
-                             Đinh Nhật Nam
+                            <a href="/clientarea/info">
+                                %%user.fullname%%
+                            </a>
                             <br />
-                             
                             <small>
-                                dinhnhatnam@gmail.com
+                                %%user.email%%
                             </small>
-                             
                         </div>
                     </div>
                 </div>
@@ -103,12 +105,57 @@
                      Dịch vụ của bạn 
                 </div>
                 <div class="panel-body">
-                    <img class="img-responsive" src="%%service.serviceimg || 'http://placehold.it/1366x300' %%" />
+                    <div tabindex="-1" role="dialog" class="modal fade" id="previewModal">
+                        <div role="document" class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    Xem trước
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-responsive" id="previewImg" />
+                                    <input type="hidden" id="base64Img" />
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <button class="btn btn-success" ng-click="updateServiceImg()" data-dismiss="modal">
+                                                Cập nhật
+                                            </button>
+                                        </div>
+                                        <div class="pull-right">
+                                            <button class="btn btn-danger" data-dismiss="modal">
+                                                Đóng lại
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative hover-container" style="height: 200px; overflow: hidden;">
+                        <h2 class="text-white text-center absolute w-100-p" style="bottom:15px;z-index: 1;">
+                            %%service.servicename%%
+                        </h2>
+                        <input class="hide" type="file" id="serviceImg" onchange="handleServiceUpload(event)" />
+                        <button class="absolute hover-inner btn btn-success" style="bottom: 40%; right: 40%; z-index: 1" onclick="jQuery('#serviceImg').click();">
+                            Đổi ảnh đại diện
+                        </button>
+                        <a class="absolute hover-inner btn btn-success" style="bottom: 5px; right: 5px; z-index: 1" href="/clientarea/editservice">
+                            Sửa dịch vụ
+                        </a>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img class="img-responsive" src="%%service.serviceimg || 'http://placehold.it/1366x700' %%" />
+                        </div>
+                    </div>
                     <div class="row-pd-5 row mt-3">
-                        <div class="col-sm-6 col-md-4" ng-repeat="product in products">
+                        <div class="col-sm-6 col-md-4" ng-repeat="product in products | filter: {deleted: false}">
                             <div class="panel panel-default mb-3">
                                 <div class="panel-heading pd-0">
-                                    <img class="img-responsive" src="http://placehold.it/480x360" />
+                                    <a href="/clientarea/product?prodid=%%product.prodid%%">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <img class="img-responsive" src="%%product.prodimg || 'http://placehold.it/480x360'%%" />
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="panel-body">
                                     <a href="/clientarea/product?prodid=%%product.prodid%%">
@@ -135,9 +182,17 @@
                                         </div>
                                     </div>
                                     <div class="clearfix">
-                                        <a href="/clientarea/product?prodid=%%product.prodid%%">
-                                            Xem chi tiết
-                                        </a>
+                                        <div class="pull-left">
+                                            <a href="/clientarea/product?prodid=%%product.prodid%%">
+                                                Xem chi tiết
+                                            </a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="/clientarea/editproduct?prodid=%%product.prodid%%">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                                 Sửa
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

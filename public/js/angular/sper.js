@@ -18,7 +18,11 @@
 
     var cities = sperStorage.getItem('cities');
     var districts = sperStorage.getItem('districts');
-    console.log(cities);
+    var cart_items = sperStorage.getItem('cart_items') || [];
+    setTimeout(function() {
+        sperMedia.setCartItems(cart_items);
+    }, 500);
+
     if(null === cities) {
         sperApi.location.getListCities({}, function (resp) {
             var cities = resp.ResponseData;
@@ -63,6 +67,18 @@
         $interpolateProvider.endSymbol('%%');
     });
 
+    sperApp.filter('thumb', ['$sce', function($sce) {
+        return function(input, w, h) {
+            return '/thumb.php?img=' + encodeURIComponent( input ) + '&w='+w+'&h='+h;
+        }
+    }]);
+
+    sperApp.filter('toCurrency', ['$sce', function ($sce) {
+        return function (input) {
+            return formatMoney(input, 0, ',', '.');
+        }
+    }]);
+
     sperApp.controller('Sper.Header', ['$scope', sper_header(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.Service.Highlight', ['$scope', sper_service_highlight(sperApi, sperStorage, sperMedia)]);
@@ -80,6 +96,14 @@
     sperApp.controller('Sper.Account.Register', ['$scope', sper_account_register(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.Service.Map', ['$scope', sper_service_map(sperApi, sperStorage, sperMedia)]);
+
+    sperApp.controller('Sper.Service.Category', ['$scope', sper_service_category(sperApi, sperStorage, sperMedia)]);
+
+    sperApp.controller('Sper.Service.Detail', ['$scope', sper_service_detail(sperApi, sperStorage, sperMedia)]);
+
+    sperApp.controller('Sper.Service.Detail.Product.List', ['$scope', sper_service_detail_product_list(sperApi, sperStorage, sperMedia)]);
+
+    sperApp.controller('Sper.Service.Product.Detail', ['$scope', sper_service_product_detail(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.Blog.Section', ['$scope', sper_blog_section(sperApi, sperStorage, sperMedia)]);
     sperApp.controller('Sper.Blog.Detail', ['$scope', sper_blog_detail(sperApi, sperStorage, sperMedia)]);
@@ -100,13 +124,19 @@
     sperApp.controller('Sper.ClientArea.Collection', ['$scope', sper_clientarea_collection(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.CreateService', ['$scope', sper_clientarea_createservice(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.ClientArea.EditService', ['$scope', sper_clientarea_editservice(sperApi, sperStorage, sperMedia)]);
     sperApp.controller('Sper.ClientArea.CreateProduct', ['$scope', sper_clientarea_createproduct(sperApi, sperStorage, sperMedia)]);
+    sperApp.controller('Sper.ClientArea.EditProduct', ['$scope', sper_clientarea_editproduct(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.Feedback', ['$scope', sper_clientarea_feedback(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.Info', ['$scope', sper_clientarea_info(sperApi, sperStorage, sperMedia)]);
 
+    sperApp.controller('Sper.ClientArea.User', ['$scope', sper_clientarea_user(sperApi, sperStorage, sperMedia)]);
+
     sperApp.controller('Sper.ClientArea.Privilege', ['$scope', sper_clientarea_privilege(sperApi, sperStorage, sperMedia)]);
 
     sperApp.controller('Sper.ClientArea.Service', ['$scope', sper_clientarea_service(sperApi, sperStorage, sperMedia)]);
+
+    sperApp.controller('Sper.Checkout.Cart', ['$scope', sper_checkout_cart(sperApi, sperStorage, sperMedia)]);
 })();

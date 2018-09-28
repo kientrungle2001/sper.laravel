@@ -1,12 +1,12 @@
 <div class="service-item col-md-15" ng-repeat="service in services">
     <div class="panel panel-default mb-2">
         <div class="panel-heading pd-0">
-            <div class="embed-responsive embed-responsive-4by3" style="overflow:hidden;">
-                <img class="img-responsive" ng-src="%%service.serviceimg%%" />
+            <div class="embed-responsive embed-responsive-16by9" style="overflow:hidden;">
+                <img class="img-responsive" ng-src="%%service.serviceimg | thumb:640:360%%" />
             </div>
         </div>
         <div class="panel-body">
-            <a class="service-heading text-service-highlight" href="#">
+            <a class="service-heading text-service-highlight" href="/service/detail?serviceid=%%service.serviceid%%">
                 <h4>
                     %%service.servicename%%
                 </h4>

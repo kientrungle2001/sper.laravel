@@ -66,7 +66,7 @@
                 <div class="panel panel-default mb-2">
                     <div class="panel-heading pd-0">
                         <div class="embed-responsive embed-responsive-4by3" style="overflow:hidden;">
-                            <img class="img-responsive" ng-src="%%service.serviceimg%%" />
+                            <img class="img-responsive" ng-src="%%service.serviceimg|thumb:400:300%%" />
                         </div>
                     </div>
                     <div class="panel-body">

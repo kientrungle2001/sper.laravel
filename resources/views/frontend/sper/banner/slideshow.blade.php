@@ -2,11 +2,11 @@
     <div role="listbox" class="carousel-inner">
         <div class="text-center item" ng-class="{'active': $index === 0}" ng-repeat="banner in banners">
             <div class="row-pd-0 row">
-                <div class="col-xs-6">
-                    <img class="img-responsive" src="%%banner.bannerimg%%" />
-                </div>
-                <div class="col-xs-6">
-                    <img class="img-responsive" src="%%banner.bannerimg%%" />
+                <div class="text-center col-xs-12">
+                    <a href="%%banner.bannerlink%%">
+                        <img class="img-responsive" src="%%banner.bannerimg%%" />
+                        <h2 class="mg-1 pd-0 fs-16 text-white" style="line-height: 25px;" ng-bind-html="banner.bannerdesc"></h2>
+                    </a>
                 </div>
             </div>
         </div>

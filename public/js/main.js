@@ -3,8 +3,17 @@ jQuery(document).ready(function () {
         jQuery(document).on('click', '.dropdown-no-close .dropdown-menu', function (e) {
             e.stopPropagation();
         });
+        jQuery('.dropdown-menu-category .collapse').on('shown.bs.collapse', function () {
+            jQuery(this).parent().find(".glyphicon-chevron-down:first").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
+        }).on('hidden.bs.collapse', function () {
+            jQuery(this).parent().find(".glyphicon-chevron-right:first").removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
+        });
     }, 1000);
-
+    jQuery(window).resize(function() {
+        jQuery('.detail-right').height(jQuery('.detail-left').height());
+    });
+    jQuery('.detail-right').height(jQuery('.detail-left').height());
+    
 });
 
 function getSperStorage() {
@@ -81,6 +90,8 @@ function getSperMedia() {
         categories: false,
         eventListeners: {},
         currentLocation: false,
+        cart_items: [],
+        selectedTab: false,
         setCurrentLocation: function (coords) {
             this.currentLocation = coords;
             this.notify('location', coords);
@@ -119,6 +130,27 @@ function getSperMedia() {
                 this.eventListeners[evt] = [];
             }
             this.eventListeners[evt].push(handler);
+        },
+        getCartItems: function() {
+            return this.cart_items;
+        },
+        setCartItems: function(cart_items) {
+            this.cart_items = cart_items;
+            this.notify('cart_items', cart_items);
+        },
+        addToCart: function(product, service) {
+            this.cart_items.push({
+                product: product,
+                service: service,
+                quantity: 1
+            });
+        },
+        selectCategoryTab: function(tab) {
+            this.selectedTab = tab;
+            this.notify('select_category_tab', tab);
+        },
+        getSelectedTab: function() {
+            return this.selectedTab;
         }
     };
 }
@@ -145,3 +177,32 @@ function getBase64(file, onload, onerror) {
     };
     reader.onerror = onerror;
 }
+
+function handleServiceUpload(event) {
+    if (event.target.files.length > 0) {
+        var imgFile = event.target.files[0];
+        if(imgFile.type.indexOf('image/') !== -1) {
+            getBase64(imgFile, function(reader) {
+                jQuery('#base64Img').val(reader.result);
+                jQuery('#previewImg').attr('src', reader.result);
+                jQuery('#previewModal').modal('show');
+            }, function(evt) {
+                // error
+                console.log(evt);
+            });
+        } else {
+            alert('Bạn phải chọn file ảnh');
+        }
+    }
+}
+
+function formatMoney(n, c, d, t) {
+    var c = isNaN(c = Math.abs(c)) ? 2 : c,
+        d = d == undefined ? "." : d,
+        t = t == undefined ? "," : t,
+        s = n < 0 ? "-" : "",
+        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+        j = (j = i.length) > 3 ? j % 3 : 0;
+
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
